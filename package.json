@@ -1,0 +1,56 @@
+{
+  "name": "bricks-child",
+  "version": "1.0.0",
+  "description": "Child theme for Bricks Builder",
+  "author": "Andrii Sivak andrey.sivak.dev@gmail.com",
+  "license": "GPL-2.0-or-later",
+  "keywords": [
+    "wordpress",
+    "theme",
+    "bricks",
+    "child-theme",
+    "webpack",
+    "multilingual"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Andrey-Sivak/bricks-child.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Andrey-Sivak/bricks-child/issues"
+  },
+  "homepage": "https://github.com/Andrey-Sivak/bricks-child#readme",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ],
+  "scripts": {
+    "start": "wp-scripts start",
+    "build": "wp-scripts build",
+    "build:prod": "NODE_ENV=production wp-scripts build",
+    "lint:js": "wp-scripts lint-js './src/**/*.js'",
+    "lint:js:fix": "wp-scripts lint-js './src/**/*.js' --fix",
+    "lint:css": "wp-scripts lint-style './src/**/*.{css,scss}'",
+    "lint:css:fix": "wp-scripts lint-style './src/**/*.{css,scss}' --fix",
+    "lint": "npm run lint:js && npm run lint:css",
+    "lint:fix": "npm run lint:js:fix && npm run lint:css:fix",
+    "format": "wp-scripts format './src/**/*.{js,json,css,scss}'",
+    "format:check": "wp-scripts format './src/**/*.{js,json,css,scss}' --check",
+    "check-licenses": "wp-scripts check-licenses",
+    "packages-update": "wp-scripts packages-update",
+    "clean": "rimraf assets/dist build node_modules/.cache",
+    "prebuild": "npm run clean",
+    "watch": "npm run start",
+    "archive": "npm run build && zip -r bricks-child.zip . -x '*.git*' 'node_modules/*' 'src/*' '.editorconfig' '.eslintrc*' '.stylelintrc*' 'webpack.config.js' 'package*.json' 'composer.*' 'phpcs.xml*'"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^31.3.0",
+    "rimraf": "^6.1.2"
+  }
+}

@@ -1,0 +1,55 @@
+# Dependencies
+node_modules
+vendor
+
+# Build output
+assets/dist
+build
+
+# WordPress
+wp-admin
+wp-includes
+wp-content/uploads
+
+# Compiled files
+*.min.js
+*.min.css
+*.map
+
+# Package files
+package-lock.json
+composer.lock
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# Git
+.git
+.gitignore
+
+# Documentation (if you don't want to format it)
+# README.md
+# CHANGELOG.md
+
+# Languages
+languages/*.po
+languages/*.pot
+languages/*.mo
+
+# Other
+*.zip
+*.tar.gz
