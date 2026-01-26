@@ -1,0 +1,71 @@
+@use "../breakpoints" as bp;
+@use "../colors" as colors;
+@use "../mixins/container-query" as *;
+
+footer#brx-footer {
+	position: relative;
+	overflow: hidden;
+
+	#brxe-ullhrk {
+		background-image: none;
+		padding-left: 16px;
+		padding-right: 16px;
+
+		@include responsive(ft-main, bp.$bp-md) {
+			padding-left: 0;
+			padding-right: var(--gutter);
+		}
+
+		@include responsive(ft-main, bp.$bp-xl) {
+			padding-left: var(--gutter);
+		}
+	}
+
+	.footer__nadpis.brxe-heading {
+		font-size: 18px;
+
+		@include responsive(ft-main, bp.$bp-lg) {
+			font-size: var(--h4);
+		}
+	}
+
+	#brxe-zyfufo {
+		grid-template-columns: 1fr;
+
+		@include responsive(ft-main, bp.$bp-md) {
+			grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+		}
+	}
+
+	#brxe-dkrscp {
+		order: 2;
+		margin: 0 -16px;
+		width: calc(100% + 32px);
+		max-width: calc(100% + 32px);
+
+		@include responsive(ft-main, bp.$bp-md) {
+			max-width: 100%;
+			width: 100%;
+			margin: 0;
+			order: 1;
+		}
+	}
+
+	#brxe-kboaep {
+		order: 1;
+		padding-bottom: 0;
+
+		@include responsive(ft-main, bp.$bp-md) {
+			padding-bottom: var(--space-m);
+			order: 2;
+		}
+	}
+
+	#brxe-gnxnsl {
+		grid-template-columns: 1fr 1fr;
+
+		@include responsive(ft-main, bp.$bp-md) {
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+	}
+}

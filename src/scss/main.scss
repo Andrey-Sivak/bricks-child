@@ -4,6 +4,7 @@
  */
 
 @use "components/header";
+@use "components/footer";
 
 body:not(.wp-admin) {
 	container-type: inline-size;
