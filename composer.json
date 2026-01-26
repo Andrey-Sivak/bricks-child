@@ -1,76 +1,72 @@
 {
-    "name": "fotografkadomca/bricks-child",
-    "description": "Child theme for Bricks Builder with custom styling, CPT templates, and EN/CZ language support",
-    "type": "wordpress-theme",
-    "license": "GPL-2.0-or-later",
-    "authors": [
-        {
-            "name": "Andrii Sivak",
-            "email": "andrey.sivak.dev@gmail.com",
-            "homepage": "https://github.com/Andrey-Sivak",
-            "role": "Developer"
-        }
-    ],
-    "keywords": [
-        "wordpress",
-        "theme",
-        "bricks",
-        "child-theme"
-    ],
-    "homepage": "https://github.com/Andrey-Sivak/bricks-child",
-    "support": {
-        "issues": "https://github.com/Andrey-Sivak/bricks-child/issues",
-        "source": "https://github.com/Andrey-Sivak/bricks-child"
+  "name": "fotografkadomca/bricks-child",
+  "description": "Child theme for Bricks Builder with custom styling, CPT templates, and EN/CZ language support",
+  "type": "wordpress-theme",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "Andrii Sivak",
+      "email": "andrey.sivak.dev@gmail.com",
+      "homepage": "https://github.com/Andrey-Sivak",
+      "role": "Developer"
+    }
+  ],
+  "keywords": [
+    "wordpress",
+    "theme",
+    "bricks",
+    "child-theme"
+  ],
+  "homepage": "https://github.com/Andrey-Sivak/bricks-child",
+  "support": {
+    "issues": "https://github.com/Andrey-Sivak/bricks-child/issues",
+    "source": "https://github.com/Andrey-Sivak/bricks-child"
+  },
+  "require": {
+    "php": ">=7.4",
+    "composer/installers": "^2.0"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^3.10",
+    "wp-coding-standards/wpcs": "^3.1",
+    "phpcompatibility/phpcompatibility-wp": "^2.1",
+    "dealerdirect/phpcodesniffer-composer-installer": "^1.0"
+  },
+  "autoload": {
+    "classmap": [
+      "inc/"
+    ]
+  },
+  "autoload-dev": {
+    "classmap": [
+      "tests/"
+    ]
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true,
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "composer/installers": true
     },
-    "require": {
-        "php": ">=7.4",
-        "composer/installers": "^2.0"
-    },
-    "require-dev": {
-        "squizlabs/php_codesniffer": "^3.10",
-        "wp-coding-standards/wpcs": "^3.1",
-        "phpcompatibility/phpcompatibility-wp": "^2.1",
-        "dealerdirect/phpcodesniffer-composer-installer": "^1.0"
-    },
-    "autoload": {
-        "classmap": [
-            "inc/"
-        ]
-    },
-    "autoload-dev": {
-        "classmap": [
-            "tests/"
-        ]
-    },
-    "config": {
-        "optimize-autoloader": true,
-        "sort-packages": true,
-        "allow-plugins": {
-            "dealerdirect/phpcodesniffer-composer-installer": true,
-            "composer/installers": true
-        },
-        "platform": {
-            "php": "7.4"
-        }
-    },
-    "scripts": {
-        "phpcs": "phpcs",
-        "phpcbf": "phpcbf",
-        "phpcs:check": "phpcs --standard=phpcs.xml.dist --report=summary",
-        "phpcs:report": "phpcs --standard=phpcs.xml.dist --report=full",
-        "lint": "@phpcs",
-        "lint:fix": "@phpcbf",
-        "test": "@phpcs:check"
-    },
-    "scripts-descriptions": {
-        "phpcs": "Run PHP_CodeSniffer checks",
-        "phpcbf": "Auto-fix PHP_CodeSniffer issues",
-        "phpcs:check": "Run PHPCS with summary report",
-        "phpcs:report": "Run PHPCS with detailed report",
-        "lint": "Alias for phpcs",
-        "lint:fix": "Alias for phpcbf",
-        "test": "Run code quality checks"
-    },
-    "minimum-stability": "stable",
-    "prefer-stable": true
+    "platform": {
+      "php": "7.4"
+    }
+  },
+  "scripts": {
+    "phpcs": "phpcs",
+    "phpcbf": "phpcbf",
+    "phpcs:check": "phpcs --standard=phpcs.xml.dist --report=summary",
+    "phpcs:report": "phpcs --standard=phpcs.xml.dist --report=full",
+    "test": "@phpcs:check"
+  },
+  "scripts-descriptions": {
+    "phpcs": "Run PHP_CodeSniffer checks",
+    "phpcbf": "Auto-fix PHP_CodeSniffer issues",
+    "phpcs:check": "Run PHPCS with summary report",
+    "phpcs:report": "Run PHPCS with detailed report",
+    "test": "Run code quality checks"
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
 }
