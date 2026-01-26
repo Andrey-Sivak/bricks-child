@@ -3,302 +3,301 @@
 @use "../mixins/container-query" as *;
 
 #brx-content.wordpress {
-  z-index: 10;
+	z-index: 10;
 }
 
 .brxe-block {
 
-  &.header {
-    position: fixed;
-    left: 0;
-    top: 0;
-    transition: all 0.3s ease;
-    z-index: 100;
-    padding: 16px 0;
-    justify-content: unset;
-    max-height: 60px;
-    overflow: hidden;
-    height: 100%;
+	&.header {
+		position: fixed;
+		left: 0;
+		top: 0;
+		transition: all 0.3s ease;
+		z-index: 100;
+		padding: 16px 0;
+		justify-content: unset;
+		max-height: 60px;
+		overflow: hidden;
+		height: 100%;
 
-    @include responsive(ft-main, bp.$bp-lg) {
-      overflow: visible;
-      height: auto;
-      max-height: none;
-      justify-content: center;
-    }
+		@include responsive(ft-main, bp.$bp-lg) {
+			overflow: visible;
+			height: auto;
+			max-height: none;
+			justify-content: center;
+		}
 
-    &.ft-out {
-      transform: translateY(-130%);
-    }
+		* {
+			transition: all 0.3s ease;
+		}
 
-    &.ft-scrolled {
-      box-shadow: 0 0 15px 2px rgba(0, 0, 0, .25);
-      background: colors.$bezova-svetla;
-      padding: 14px 0;
+		&.ft-out {
+			transform: translateY(-130%);
+		}
 
-      * {
-        color: colors.$terakotova;
-        fill: currentColor !important;
-      }
-    }
+		&.ft-scrolled {
+			box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.25);
+			background: colors.$bezova-svetla;
+			padding: 14px 0;
 
-    * {
-      transition: all 0.3s ease;
-    }
+			* {
+				color: colors.$terakotova;
+				fill: currentcolor !important;
+			}
+		}
 
-    .mob-burger-btn {
-      order: 2;
-      background-color: transparent;
-      justify-self: end;
-      align-self: center;
-      width: 20px;
-      height: 16px;
-      position: relative;
-      display: block;
-      z-index: 20;
-      margin-right: 16px;
+		.mob-burger-btn {
+			order: 2;
+			background-color: transparent;
+			justify-self: end;
+			align-self: center;
+			width: 20px;
+			height: 16px;
+			position: relative;
+			display: block;
+			z-index: 20;
+			margin-right: 16px;
 
-      @include responsive(ft-main, bp.$bp-lg) {
-        margin-right: 20px;
-      }
+			@include responsive(ft-main, bp.$bp-lg) {
+				margin-right: 20px;
+			}
 
-      @include responsive(ft-main, bp.$bp-lg) {
-        display: none;
-      }
+			@include responsive(ft-main, bp.$bp-lg) {
+				display: none;
+			}
 
-      &-bottom,
-      &-center,
-      &-top {
-        background-color: colors.$terakotova;
-        transition: all ease-in-out .3s;
-        position: absolute;
-        left: 50%;
-        width: 100%;
-        height: 2px;
-        display: block;
-        max-width: 100%;
-        border-radius: 100%;
-      }
+			&-bottom,
+			&-center,
+			&-top {
+				background-color: colors.$terakotova;
+				transition: all ease-in-out 0.3s;
+				position: absolute;
+				left: 50%;
+				width: 100%;
+				height: 2px;
+				display: block;
+				max-width: 100%;
+				border-radius: 100%;
+			}
 
-      &-bottom,
-      &-top {
-        transform: translateX(-50%);
-      }
+			&-bottom,
+			&-top {
+				transform: translateX(-50%);
+			}
 
-      &-top {
-        top: 0;
-      }
+			&-top {
+				top: 0;
+			}
 
-      &-bottom {
-        top: auto;
-        bottom: 0;
-      }
+			&-bottom {
+				top: auto;
+				bottom: 0;
+			}
 
-      &-center {
-        top: 50%;
-        transform: translateY(-50%) translateX(-50%);
-      }
-    }
+			&-center {
+				top: 50%;
+				transform: translateY(-50%) translateX(-50%);
+			}
+		}
 
-    #brxe-kifgrw {
-      align-items: center;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      row-gap: 0;
-      justify-content: unset;
+		#brxe-kifgrw {
+			align-items: center;
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			row-gap: 0;
+			justify-content: unset;
 
-      @include responsive(ft-main, bp.$bp-lg) {
-        grid-template-columns: unset;
-        display: flex;
-        row-gap: var(--gap-xl);
-        justify-content: center;
-      }
-    }
+			@include responsive(ft-main, bp.$bp-lg) {
+				grid-template-columns: unset;
+				display: flex;
+				row-gap: var(--gap-xl);
+				justify-content: center;
+			}
+		}
 
-    #brxe-knxqfg {
-      order: 3;
+		#brxe-knxqfg {
+			order: 3;
 
-      @include responsive(ft-main, bp.$bp-lg) {
-        order: 1;
-      }
+			@include responsive(ft-main, bp.$bp-lg) {
+				order: 1;
+			}
 
-      #brxe-mwawgk {
-        padding: 16px 0 10px 0;
+			#brxe-mwawgk {
+				padding: 16px 0 10px 0;
 
-        @include responsive(ft-main, bp.$bp-lg) {
-          padding: 0;
-        }
-      }
-    }
+				@include responsive(ft-main, bp.$bp-lg) {
+					padding: 0;
+				}
+			}
+		}
 
-    .brxe-svg.logo {
-      display: block;
-      height: auto;
-      margin: 0 auto 0 16px;
-      width: 80px;
-      order: 1;
+		.brxe-svg.logo {
+			display: block;
+			height: auto;
+			margin: 0 auto 0 16px;
+			width: 80px;
+			order: 1;
 
-      @include responsive(ft-main, bp.$bp-md) {
-        width: auto;
-        margin: 0 auto 0 20px;
-      }
+			@include responsive(ft-main, bp.$bp-md) {
+				width: auto;
+				margin: 0 auto 0 20px;
+			}
 
-      @include responsive(ft-main, bp.$bp-lg) {
-        margin: 0;
-        height: var(--logo-height);
-        order: 2;
-      }
-    }
+			@include responsive(ft-main, bp.$bp-lg) {
+				margin: 0;
+				height: var(--logo-height);
+				order: 2;
+			}
+		}
 
-    .brxe-nav-nested {
-      will-change: opacity;
-      grid-column: 1 / -1;
-      opacity: 0;
+		.brxe-nav-nested {
+			will-change: opacity;
+			grid-column: 1 / -1;
+			opacity: 0;
 
-      @include responsive(ft-main, bp.$bp-lg) {
-        overflow: visible;
-        opacity: 1;
-      }
+			@include responsive(ft-main, bp.$bp-lg) {
+				overflow: visible;
+				opacity: 1;
+			}
 
-      .brx-submenu-toggle {
-        justify-content: center;
-      }
-    }
+			.brx-submenu-toggle {
+				justify-content: center;
+			}
+		}
 
-    .brx-nav-nested-items {
-      opacity: 1;
-      overflow: visible;
-      position: static;
-      visibility: visible;
-      background-color: transparent;
-    }
+		.brx-nav-nested-items {
+			opacity: 1;
+			overflow: visible;
+			position: static;
+			visibility: visible;
+			background-color: transparent;
+		}
 
-    #brxe-elxeiu {
-      order: 4;
-    }
+		#brxe-elxeiu {
+			order: 4;
+		}
 
-    .nav__wrapper-items.brxe-block {
-      display: grid;
-      gap: 10px;
-      text-align: center;
+		.nav__wrapper-items.brxe-block {
+			display: grid;
+			gap: 10px;
+			text-align: center;
 
-      @include responsive(ft-main, bp.$bp-lg) {
-        display: flex;
-        gap: 30px;
-        text-align: left;
-      }
-    }
+			@include responsive(ft-main, bp.$bp-lg) {
+				display: flex;
+				gap: 30px;
+				text-align: left;
+			}
+		}
 
-    .nav__dropdown {
+		.nav__dropdown-content-block {
+			background-color: transparent;
+			position: static;
+			padding: 0;
+			max-height: 0;
+			overflow: hidden;
 
-      &.ft-active {
+			@include responsive(ft-main, bp.$bp-lg) {
+				overflow: visible;
+				max-height: none;
+				padding: var(--p-2);
+				background-color: var(--bezova);
+				position: absolute;
+			}
 
-        .nav__dropdown-content-block {
-          max-height: 300px;
-          opacity: 1;
-          visibility: visible;
-        }
-      }
-    }
+			.menu-item {
 
-    .nav__dropdown-content-block {
-      background-color: transparent;
-      position: static;
-      padding: 0;
-      max-height: 0;
-      overflow: hidden;
+				&:first-child {
+					padding-top: 12px;
 
-      @include responsive(ft-main, bp.$bp-lg) {
-        overflow: visible;
-        max-height: none;
-        padding: var(--p-2);
-        background-color: var(--bezova);
-        position: absolute;
-      }
+					@include responsive(ft-main, bp.$bp-lg) {
+						padding-top: 0;
+					}
+				}
+			}
 
-      .menu-item {
+			.brxe-text-link {
+				justify-content: center;
 
-        &:first-child {
-          padding-top: 12px;
+				@include responsive(ft-main, bp.$bp-lg) {
+					justify-content: flex-start;
+				}
+			}
+		}
 
-          @include responsive(ft-main, bp.$bp-lg) {
-            padding-top: 0;
-          }
-        }
-      }
+		.nav__dropdown {
 
-      .brxe-text-link {
-        justify-content: center;
+			&.ft-active {
 
-        @include responsive(ft-main, bp.$bp-lg) {
-          justify-content: flex-start;
-        }
-      }
-    }
-  }
+				.nav__dropdown-content-block {
+					max-height: 300px;
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+		}
+	}
 }
 
 html.mob-menu-active {
-  overflow: hidden;
+	overflow: hidden;
 
-  .brxe-block.header {
-    overflow-y: auto;
-    max-height: 100vh;
-    background-color: #fff;
+	.brxe-block.header {
+		overflow-y: auto;
+		max-height: 100vh;
+		background-color: #fff;
 
-    @supports (height: 1dvh) {
-      max-height: 100dvh;
-    }
+		@supports (height: 1dvh) {
+			max-height: 100dvh;
+		}
 
-    @include responsive(ft-main, bp.$bp-lg) {
-      max-height: none;
-    }
+		@include responsive(ft-main, bp.$bp-lg) {
+			max-height: none;
+		}
 
-    .brxe-nav-nested {
-      opacity: 1;
-    }
-  }
+		.brxe-nav-nested {
+			opacity: 1;
+		}
 
-  .brxe-block.header {
+		.mob-burger-btn {
 
-    .mob-burger-btn {
+			&-center {
+				max-width: 0;
+			}
 
-      &-center {
-        max-width: 0;
-      }
+			&-top {
+				top: 50%;
+				transform: translate(-50%, -50%) rotate(135deg);
+			}
 
-      &-top {
-        top: 50%;
-        transform: translate(-50%, -50%) rotate(135deg);
-      }
-
-      &-bottom {
-        top: 50%;
-        transform: translate(-50%, -50%) rotate(45deg);
-      }
-    }
-  }
+			&-bottom {
+				top: 50%;
+				transform: translate(-50%, -50%) rotate(45deg);
+			}
+		}
+	}
 }
 
 body.admin-bar {
 
-  .brxe-block.header {
+	.brxe-block.header {
 
-    &:not(.ft-scrolled) {
-      top: 46px;
-    }
+		&:not(.ft-scrolled) {
+			top: 46px;
+		}
 
-    @media (min-width: #{bp.$bp-md}) {
-      &,
-      &.ft-scrolled {
-        top: 32px!important;
-      }
-    }
-  }
+		@media (min-width: #{bp.$bp-md}) {
+
+			&,
+			&.ft-scrolled {
+				top: 32px !important;
+			}
+		}
+	}
 }
 
 @media screen and (max-width: 782px) {
-  html:has(.admin-bar) {
-    margin-top: 0 !important;
-  }
+
+	html:has(.admin-bar) {
+		margin-top: 0 !important;
+	}
 }
