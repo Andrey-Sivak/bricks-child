@@ -9,68 +9,73 @@ const path = require( 'path' );
  * Extends @wordpress/scripts default configuration
  */
 module.exports = {
-    ...defaultConfig,
+	...defaultConfig,
 
-    entry: {
-        main: path.resolve( process.cwd(), 'src/js', 'main.js' ),
-        style: path.resolve( process.cwd(), 'src/scss', 'main.scss' ),
-        admin: path.resolve( process.cwd(), 'src/js', 'admin.js' ),
-        'admin-style': path.resolve( process.cwd(), 'src/scss', 'admin.scss' ),
-    },
+	entry: {
+		main: path.resolve( process.cwd(), 'src/js', 'main.js' ),
+		style: path.resolve( process.cwd(), 'src/scss', 'main.scss' ),
+		admin: path.resolve( process.cwd(), 'src/js', 'admin.js' ),
+		'admin-style': path.resolve( process.cwd(), 'src/scss', 'admin.scss' ),
+		header: path.resolve( process.cwd(), 'src/js', 'header.js' ),
+	},
 
-    // Output configuration
-    output: {
-        ...defaultConfig.output,
-        path: path.resolve( process.cwd(), 'assets/dist' ),
-        filename: '[name].js',
-        // Clean dist folder before each build
-        clean: true,
-    },
+	// Output configuration
+	output: {
+		...defaultConfig.output,
+		path: path.resolve( process.cwd(), 'assets/dist' ),
+		filename: '[name].js',
+		// Clean dist folder before each build
+		clean: true,
+	},
 
-    // Source maps for development
-    devtool: process.env.NODE_ENV === 'production' ? false : 'source-map',
+	externals: {
+		'@wordpress/i18n': [ 'wp', 'i18n' ],
+	},
 
-    // Development server configuration
-    devServer: {
-        ...defaultConfig.devServer,
-        allowedHosts: 'all',
-        host: 'localhost',
-        port: 8887,
-        headers: {
-            'Access-Control-Allow-Origin': '*',
-        },
-    },
+	// Source maps for development
+	devtool: process.env.NODE_ENV === 'production' ? false : 'source-map',
 
-    // Module rules
-    module: {
-        ...defaultConfig.module,
-        rules: [
-            ...defaultConfig.module.rules,
+	// Development server configuration
+	devServer: {
+		...defaultConfig.devServer,
+		allowedHosts: 'all',
+		host: 'localhost',
+		port: 8887,
+		headers: {
+			'Access-Control-Allow-Origin': '*',
+		},
+	},
 
-            // Image assets
-            {
-                test: /\.(png|jpg|jpeg|gif|svg)$/i,
-                type: 'asset/resource',
-                generator: {
-                    filename: 'images/[name][ext]',
-                },
-            },
+	// Module rules
+	module: {
+		...defaultConfig.module,
+		rules: [
+			...defaultConfig.module.rules,
 
-            // Font assets
-            {
-                test: /\.(woff|woff2|eot|ttf|otf)$/i,
-                type: 'asset/resource',
-                generator: {
-                    filename: 'fonts/[name][ext]',
-                },
-            },
-        ],
-    },
+			// Image assets
+			{
+				test: /\.(png|jpg|jpeg|gif|svg)$/i,
+				type: 'asset/resource',
+				generator: {
+					filename: 'images/[name][ext]',
+				},
+			},
 
-    // Performance hints
-    performance: {
-        hints: process.env.NODE_ENV === 'production' ? 'warning' : false,
-        maxEntrypointSize: 512000,
-        maxAssetSize: 512000,
-    },
+			// Font assets
+			{
+				test: /\.(woff|woff2|eot|ttf|otf)$/i,
+				type: 'asset/resource',
+				generator: {
+					filename: 'fonts/[name][ext]',
+				},
+			},
+		],
+	},
+
+	// Performance hints
+	performance: {
+		hints: process.env.NODE_ENV === 'production' ? 'warning' : false,
+		maxEntrypointSize: 512000,
+		maxAssetSize: 512000,
+	},
 };

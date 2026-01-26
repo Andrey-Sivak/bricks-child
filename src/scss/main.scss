@@ -4,3 +4,17 @@
  */
 
 @use "components/header";
+
+body:not(.wp-admin) {
+  container-type: inline-size;
+  container-name: ft-main;
+  position: relative;
+  max-width: 100%;
+}
+
+.ft-visually-hidden {
+  position: absolute;
+  z-index: -100;
+  clip: rect(0 0 0 0);
+  opacity: 0;
+}
