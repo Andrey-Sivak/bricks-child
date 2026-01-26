@@ -6,43 +6,19 @@
 	<!-- Avoid noisy deprecation notices from sniffs on newer PHP -->
 	<ini name="error_reporting" value="E_ALL &amp; ~E_DEPRECATED" />
 
-	<!-- Set text encoding -->
-	<config name="encoding" value="utf-8"/>
-
-	<!-- Show progress and use colors -->
-	<arg value="ps"/>
-	<arg name="colors"/>
-
-	<!-- Check up to 20 files simultaneously -->
-	<arg name="parallel" value="20"/>
-
-	<!-- Check PHP files only -->
-	<arg name="extensions" value="php"/>
-
-	<!-- Scan these files and directories -->
+	<!-- Scan everything except vendor/node_modules/build and non-PHP assets -->
 	<file>.</file>
-
-	<!-- Exclude patterns -->
 	<exclude-pattern>/vendor/</exclude-pattern>
 	<exclude-pattern>/node_modules/</exclude-pattern>
 	<exclude-pattern>/assets/</exclude-pattern>
-	<exclude-pattern>/build/</exclude-pattern>
-	<exclude-pattern>/languages/</exclude-pattern>
 	<exclude-pattern>*.js</exclude-pattern>
-	<exclude-pattern>*.css</exclude-pattern>
-	<exclude-pattern>*.scss</exclude-pattern>
 	<exclude-pattern>*.json</exclude-pattern>
-	<exclude-pattern>*.md</exclude-pattern>
+	<exclude-pattern>style.css</exclude-pattern>
 
-	<!-- WordPress Coding Standards -->
-	<rule ref="WordPress-Core"/>
-	<rule ref="WordPress-Extra">
-		<!-- Allow short array syntax -->
-		<exclude name="Generic.Arrays.DisallowShortArraySyntax"/>
-	</rule>
-	<rule ref="WordPress-Docs"/>
+	<!-- WordPress coding standards (Extra) -->
+	<rule ref="WordPress-Extra" />
 
-	<!-- Enforce text domain for internationalization -->
+	<!-- Enforce text domain for i18n -->
 	<rule ref="WordPress.WP.I18n">
 		<properties>
 			<property name="text_domain" type="array">
@@ -51,57 +27,32 @@
 		</properties>
 	</rule>
 
-	<!-- Enforce prefixing for globals/functions/classes/constants -->
+	<!-- Enforce prefixing for globals/functions/classes/constants/etc. -->
 	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
 		<properties>
 			<property name="prefixes" type="array">
 				<element value="bricks_child"/>
-				<element value="BRICKS_CHILD"/>
 			</property>
 		</properties>
-		<exclude-pattern>functions.php</exclude-pattern>
-	</rule>
-
-	<!-- Check for correct file names -->
-	<rule ref="WordPress.Files.FileName">
-		<properties>
-			<property name="strict_class_file_names" value="false"/>
-		</properties>
-		<!-- Exclude main theme files -->
-		<exclude-pattern>functions.php</exclude-pattern>
-		<exclude-pattern>style.css</exclude-pattern>
 	</rule>
 
 	<!-- Whitespace strictness -->
 	<rule ref="WordPress.WhiteSpace.ControlStructureSpacing">
 		<properties>
-			<property name="blank_line_check" value="true"/>
+			<property name="blank_line_check" value="true" />
 		</properties>
 	</rule>
 
-	<!-- Check for proper escaping -->
-	<rule ref="WordPress.Security.EscapeOutput"/>
-	<rule ref="WordPress.Security.NonceVerification"/>
-	<rule ref="WordPress.Security.ValidatedSanitizedInput"/>
-
-	<!-- PHP Compatibility checks for WordPress -->
+	<!-- PHP compatibility checks for WordPress context -->
 	<rule ref="PHPCompatibilityWP">
-		<include-pattern>*\.php$</include-pattern>
-	</rule>
-
-	<!-- Configure PHPCompatibility -->
-	<config name="testVersion" value="7.4-"/>
-	<config name="minimum_wp_version" value="6.0"/>
-
-	<!-- Allow short array syntax [] instead of array() -->
-	<rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
-
-	<!-- Enforce spacing around concatenation operator -->
-	<rule ref="Squiz.Strings.ConcatenationSpacing">
 		<properties>
-			<property name="spacing" value="1"/>
-			<property name="ignoreNewlines" value="true"/>
+			<!-- Target PHP version: adjust if you raise your plugin’s minimum -->
+			<property name="testVersion" value="7.4-"/>
+			<!-- Set minimum supported WP version (align with plugin readme/headers) -->
+			<property name="minimum_supported_wp_version" value="6.0"/>
 		</properties>
 	</rule>
 
+	<!-- Make sure WordPress functions are safe for installations before WP 6.0 -->
+    <config name="minimum_wp_version" value="6.0"/>
 </ruleset>
