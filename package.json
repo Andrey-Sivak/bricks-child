@@ -47,7 +47,7 @@
     "clean": "rimraf assets/dist build node_modules/.cache",
     "prebuild": "npm run clean",
     "watch": "npm run start",
-    "archive": "npm run build && zip -r bricks-child.zip . -x '*.git*' 'node_modules/*' 'src/*' '.editorconfig' '.eslintrc*' '.stylelintrc*' 'webpack.config.js' 'package*.json' 'composer.*' 'phpcs.xml*'"
+    "archive": "npm run build && zip -r bricks-child.zip . -x '*.git*' 'node_modules/*' 'vendor/*' 'src/*' 'tests/*' '.editorconfig' '.eslintrc*' '.stylelintrc*' 'webpack.config.js' 'package*.json' 'composer.*' 'phpcs.xml*' '.prettierignore' '.gitignore' '.prettierrc.js'"
   },
   "devDependencies": {
     "@wordpress/scripts": "^31.3.0",
