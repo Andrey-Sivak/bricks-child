@@ -139,11 +139,11 @@
 			order: 1;
 
 			@include responsive(ft-main, bp.$bp-md) {
-				width: auto;
 				margin: 0 auto 0 20px;
 			}
 
 			@include responsive(ft-main, bp.$bp-lg) {
+				width: auto;
 				margin: 0;
 				height: var(--logo-height);
 				order: 2;
