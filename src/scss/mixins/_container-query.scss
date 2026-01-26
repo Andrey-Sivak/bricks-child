@@ -1,0 +1,20 @@
+/** Responsive mixin with container query + media query fallback */
+
+/** @param {String} $container - Container name */
+
+/** @param {String} $min-width - Breakpoint value */
+@mixin responsive($container, $min-width) {
+
+	/** Fallback: media query for unsupported browsers */
+	@supports not (container-type: inline-size) {
+
+		@media (min-width: #{$min-width}) {
+			@content;
+		}
+	}
+
+	/** Modern: container query */
+	@container #{$container} (min-width: #{$min-width}) {
+		@content;
+	}
+}
