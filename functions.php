@@ -7,7 +7,7 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-    exit; // Exit if accessed directly.
+	exit; // Exit if accessed directly.
 }
 
 /**
@@ -22,7 +22,7 @@ define( 'BRICKS_CHILD_PATH', get_stylesheet_directory() . '/' );
  * Load Composer autoloader if available
  */
 if ( file_exists( BRICKS_CHILD_DIR . '/vendor/autoload.php' ) ) {
-    require_once BRICKS_CHILD_DIR . '/vendor/autoload.php';
+	require_once BRICKS_CHILD_DIR . '/vendor/autoload.php';
 }
 
 /**
@@ -38,17 +38,17 @@ require_once BRICKS_CHILD_DIR . '/inc/templates.php';
  * @return void
  */
 function bricks_child_setup() {
-    /**
-     * Translations in the /languages/ directory.
-     */
-    load_child_theme_textdomain( 'bricks-child', BRICKS_CHILD_DIR . '/languages' );
+	/**
+	 * Translations in the /languages/ directory.
+	 */
+	load_child_theme_textdomain( 'bricks-child', BRICKS_CHILD_DIR . '/languages' );
 
-    /**
-     * Add theme support for various features if needed
-     * Note: Bricks already adds most supports, only add if you need additional ones
-     */
-    // add_theme_support( 'custom-logo' );
-    // add_theme_support( 'post-thumbnails' );
+	/**
+	 * Add theme support for various features if needed
+	 * Note: Bricks already adds most supports, only add if you need additional ones
+	 */
+	// add_theme_support( 'custom-logo' );
+	// add_theme_support( 'post-thumbnails' );
 }
 add_action( 'after_setup_theme', 'bricks_child_setup' );
 
@@ -58,7 +58,7 @@ add_action( 'after_setup_theme', 'bricks_child_setup' );
  * @return void
  */
 function bricks_child_image_sizes() {
-    // Example: add_image_size( 'custom-thumb', 300, 200, true );
+	// Example: add_image_size( 'custom-thumb', 300, 200, true );
 }
 add_action( 'after_setup_theme', 'bricks_child_image_sizes' );
 
@@ -69,38 +69,38 @@ add_action( 'after_setup_theme', 'bricks_child_image_sizes' );
  * @return void
  */
 function bricks_child_admin_enqueue_scripts( $hook ) {
-    $admin_asset_file = BRICKS_CHILD_DIR . '/assets/dist/admin.asset.php';
+	$admin_asset_file = BRICKS_CHILD_DIR . '/assets/dist/admin.asset.php';
 
-    if ( ! file_exists( $admin_asset_file ) ) {
-        return;
-    }
+	if ( ! file_exists( $admin_asset_file ) ) {
+		return;
+	}
 
-    $admin_asset = require $admin_asset_file;
+	$admin_asset = require $admin_asset_file;
 
-    wp_enqueue_style(
-        'bricks-child-admin',
-        BRICKS_CHILD_URI . '/assets/dist/admin.css',
-        array(),
-        $admin_asset['version']
-    );
+	wp_enqueue_style(
+		'bricks-child-admin',
+		BRICKS_CHILD_URI . '/assets/dist/admin.css',
+		array(),
+		$admin_asset['version']
+	);
 
-    wp_enqueue_script(
-        'bricks-child-admin',
-        BRICKS_CHILD_URI . '/assets/dist/admin.js',
-        $admin_asset['dependencies'],
-        $admin_asset['version'],
-        true
-    );
+	wp_enqueue_script(
+		'bricks-child-admin',
+		BRICKS_CHILD_URI . '/assets/dist/admin.js',
+		$admin_asset['dependencies'],
+		$admin_asset['version'],
+		true
+	);
 
-    // Localize admin script if needed.
-    wp_localize_script(
-        'bricks-child-admin',
-        'bricksChildAdmin',
-        array(
-            'ajaxUrl' => admin_url( 'admin-ajax.php' ),
-            'nonce'   => wp_create_nonce( 'bricks_child_admin_nonce' ),
-        )
-    );
+	// Localize admin script if needed.
+	wp_localize_script(
+		'bricks-child-admin',
+		'bricksChildAdmin',
+		array(
+			'ajaxUrl' => admin_url( 'admin-ajax.php' ),
+			'nonce'   => wp_create_nonce( 'bricks_child_admin_nonce' ),
+		)
+	);
 }
 add_action( 'admin_enqueue_scripts', 'bricks_child_admin_enqueue_scripts' );
 
@@ -111,16 +111,16 @@ add_action( 'admin_enqueue_scripts', 'bricks_child_admin_enqueue_scripts' );
  * @return array Modified body classes.
  */
 function bricks_child_body_classes( $classes ) {
-    // Add language class for styling purposes.
-    $current_lang = function_exists( 'pll_current_language' ) ? pll_current_language() : get_locale();
-    $classes[]    = 'lang-' . sanitize_html_class( $current_lang );
+	// Add language class for styling purposes.
+	$current_lang = function_exists( 'pll_current_language' ) ? pll_current_language() : get_locale();
+	$classes[]    = 'lang-' . sanitize_html_class( $current_lang );
 
-    // Add logged-in class if user is logged in.
-    if ( is_user_logged_in() ) {
-        $classes[] = 'user-logged-in';
-    }
+	// Add logged-in class if user is logged in.
+	if ( is_user_logged_in() ) {
+		$classes[] = 'user-logged-in';
+	}
 
-    return $classes;
+	return $classes;
 }
 add_filter( 'body_class', 'bricks_child_body_classes' );
 
@@ -131,8 +131,8 @@ add_filter( 'body_class', 'bricks_child_body_classes' );
  * @return void
  */
 // function bricks_child_disable_parent_css() {
-// 	wp_dequeue_style( 'bricks-frontend' );
-// 	wp_deregister_style( 'bricks-frontend' );
+//  wp_dequeue_style( 'bricks-frontend' );
+//  wp_deregister_style( 'bricks-frontend' );
 // }
 // add_action( 'wp_enqueue_scripts', 'bricks_child_disable_parent_css', 20 );
 
@@ -143,8 +143,8 @@ add_filter( 'body_class', 'bricks_child_body_classes' );
  * @return array Modified query vars.
  */
 function bricks_child_query_vars( $vars ) {
-    // Example: $vars[] = 'custom_var';
-    return $vars;
+	// Example: $vars[] = 'custom_var';
+	return $vars;
 }
 add_filter( 'query_vars', 'bricks_child_query_vars' );
 
@@ -155,9 +155,9 @@ add_filter( 'query_vars', 'bricks_child_query_vars' );
  * @return int Modified excerpt length.
  */
 function bricks_child_excerpt_length( $length ) {
-    return 30;
+	return 30;
 }
- add_filter( 'excerpt_length', 'bricks_child_excerpt_length' );
+add_filter( 'excerpt_length', 'bricks_child_excerpt_length' );
 
 /**
  * Register custom REST API endpoints if needed
@@ -165,16 +165,16 @@ function bricks_child_excerpt_length( $length ) {
  * @return void
  */
 function bricks_child_register_rest_routes() {
-    // Example REST endpoint.
-    register_rest_route(
-        'bricks-child/v1',
-        '/example',
-        array(
-            'methods'             => 'GET',
-            'callback'            => 'bricks_child_rest_example',
-            'permission_callback' => '__return_true',
-        )
-    );
+	// Example REST endpoint.
+	register_rest_route(
+		'bricks-child/v1',
+		'/example',
+		array(
+			'methods'             => 'GET',
+			'callback'            => 'bricks_child_rest_example',
+			'permission_callback' => '__return_true',
+		)
+	);
 }
 // add_action( 'rest_api_init', 'bricks_child_register_rest_routes' );
 
@@ -185,15 +185,15 @@ function bricks_child_register_rest_routes() {
  * @return WP_REST_Response Response object or error.
  */
 function bricks_child_rest_example( $request ) {
-    return new WP_REST_Response(
-        array(
-            'success' => true,
-            'data'    => array(
-                'message' => __( 'Example endpoint', 'bricks-child' ),
-            ),
-        ),
-        200
-    );
+	return new WP_REST_Response(
+		array(
+			'success' => true,
+			'data'    => array(
+				'message' => __( 'Example endpoint', 'bricks-child' ),
+			),
+		),
+		200
+	);
 }
 
 /**
@@ -202,7 +202,7 @@ function bricks_child_rest_example( $request ) {
  * @return string
  */
 function bricks_child_remove_version() {
-    return '';
+	return '';
 }
 add_filter( 'the_generator', 'bricks_child_remove_version' );
 
@@ -213,7 +213,7 @@ add_filter( 'the_generator', 'bricks_child_remove_version' );
  * @return bool Modified XML-RPC status.
  */
 function bricks_child_disable_xmlrpc( $enabled ) {
-    return false;
+	return false;
 }
 // add_filter( 'xmlrpc_enabled', 'bricks_child_disable_xmlrpc' );
 
@@ -226,16 +226,16 @@ function bricks_child_disable_xmlrpc( $enabled ) {
  * @return string Modified script tag.
  */
 function bricks_child_defer_scripts( $tag, $handle, $src ) {
-    // List of scripts to defer.
-    $defer_scripts = array(
-        'bricks-child',
-    );
+	// List of scripts to defer.
+	$defer_scripts = array(
+		'bricks-child',
+	);
 
-    if ( in_array( $handle, $defer_scripts, true ) ) {
-        return str_replace( ' src=', ' defer src=', $tag );
-    }
+	if ( in_array( $handle, $defer_scripts, true ) ) {
+		return str_replace( ' src=', ' defer src=', $tag );
+	}
 
-    return $tag;
+	return $tag;
 }
 add_filter( 'script_loader_tag', 'bricks_child_defer_scripts', 10, 3 );
 
@@ -247,11 +247,11 @@ add_filter( 'script_loader_tag', 'bricks_child_defer_scripts', 10, 3 );
  * @return array Modified mime types.
  */
 function bricks_child_mime_types( $mimes ) {
-    $mimes['svg']  = 'image/svg+xml';
-    $mimes['svgz'] = 'image/svg+xml';
-    return $mimes;
+	$mimes['svg']  = 'image/svg+xml';
+	$mimes['svgz'] = 'image/svg+xml';
+	return $mimes;
 }
- add_filter( 'upload_mimes', 'bricks_child_mime_types' );
+add_filter( 'upload_mimes', 'bricks_child_mime_types' );
 
 /**
  * Fix SVG thumbnails in media library
@@ -262,16 +262,16 @@ function bricks_child_mime_types( $mimes ) {
  * @return array Modified attachment data.
  */
 function bricks_child_fix_svg_thumb( $response, $attachment, $meta ) {
-    if ( 'image/svg+xml' === $response['mime'] ) {
-        $response['image'] = array(
-            'src'    => $response['url'],
-            'width'  => 150,
-            'height' => 150,
-        );
-    }
-    return $response;
+	if ( 'image/svg+xml' === $response['mime'] ) {
+		$response['image'] = array(
+			'src'    => $response['url'],
+			'width'  => 150,
+			'height' => 150,
+		);
+	}
+	return $response;
 }
- add_filter( 'wp_prepare_attachment_for_js', 'bricks_child_fix_svg_thumb', 10, 3 );
+add_filter( 'wp_prepare_attachment_for_js', 'bricks_child_fix_svg_thumb', 10, 3 );
 
 /**
  * Custom login page styles
@@ -279,13 +279,13 @@ function bricks_child_fix_svg_thumb( $response, $attachment, $meta ) {
  * @return void
  */
 function bricks_child_login_styles() {
-    ?>
-    <style type="text/css">
-        body.login {
-            /* Add custom login page styles */
-        }
-    </style>
-    <?php
+	?>
+	<style type="text/css">
+		body.login {
+			/* Add custom login page styles */
+		}
+	</style>
+	<?php
 }
 // add_action( 'login_enqueue_scripts', 'bricks_child_login_styles' );
 
@@ -295,7 +295,7 @@ function bricks_child_login_styles() {
  * @return string Site home URL.
  */
 function bricks_child_login_logo_url() {
-    return home_url();
+	return home_url();
 }
 // add_filter( 'login_headerurl', 'bricks_child_login_logo_url' );
 
@@ -305,7 +305,7 @@ function bricks_child_login_logo_url() {
  * @return string Site name.
  */
 function bricks_child_login_logo_url_title() {
-    return get_bloginfo( 'name' );
+	return get_bloginfo( 'name' );
 }
 // add_filter( 'login_headertext', 'bricks_child_login_logo_url_title' );
 
@@ -315,15 +315,15 @@ function bricks_child_login_logo_url_title() {
  * @return void
  */
 function bricks_child_cleanup_head() {
-    // Remove RSD link.
-    remove_action( 'wp_head', 'rsd_link' );
-    // Remove Windows Live Writer manifest link.
-    remove_action( 'wp_head', 'wlwmanifest_link' );
-    // Remove shortlink.
-    remove_action( 'wp_head', 'wp_shortlink_wp_head' );
-    // Remove feed links.
-    // remove_action( 'wp_head', 'feed_links', 2 );
-    // remove_action( 'wp_head', 'feed_links_extra', 3 );
+	// Remove RSD link.
+	remove_action( 'wp_head', 'rsd_link' );
+	// Remove Windows Live Writer manifest link.
+	remove_action( 'wp_head', 'wlwmanifest_link' );
+	// Remove shortlink.
+	remove_action( 'wp_head', 'wp_shortlink_wp_head' );
+	// Remove feed links.
+	// remove_action( 'wp_head', 'feed_links', 2 );
+	// remove_action( 'wp_head', 'feed_links_extra', 3 );
 }
 add_action( 'init', 'bricks_child_cleanup_head' );
 
@@ -334,7 +334,7 @@ add_action( 'init', 'bricks_child_cleanup_head' );
  * @return int Limited number of revisions.
  */
 function bricks_child_limit_revisions( $num ) {
-    return 5;
+	return 5;
 }
 // add_filter( 'wp_revisions_to_keep', 'bricks_child_limit_revisions' );
 
@@ -344,28 +344,28 @@ function bricks_child_limit_revisions( $num ) {
  * @return void
  */
 function bricks_child_admin_notice() {
-    if ( ! current_user_can( 'manage_options' ) ) {
-        return;
-    }
+	if ( ! current_user_can( 'manage_options' ) ) {
+		return;
+	}
 
-    $screen = get_current_screen();
-    if ( 'themes' !== $screen->id ) {
-        return;
-    }
+	$screen = get_current_screen();
+	if ( 'themes' !== $screen->id ) {
+		return;
+	}
 
-    ?>
-    <div class="notice notice-info is-dismissible">
-        <p>
-            <?php
-            printf(
-            /* translators: %s: Theme version */
-                esc_html__( 'Bricks Child Theme v%s is active. Thank you for using our theme!', 'bricks-child' ),
-                esc_html( BRICKS_CHILD_VERSION )
-            );
-            ?>
-        </p>
-    </div>
-    <?php
+	?>
+	<div class="notice notice-info is-dismissible">
+		<p>
+			<?php
+			printf(
+			/* translators: %s: Theme version */
+				esc_html__( 'Bricks Child Theme v%s is active. Thank you for using our theme!', 'bricks-child' ),
+				esc_html( BRICKS_CHILD_VERSION )
+			);
+			?>
+		</p>
+	</div>
+	<?php
 }
 add_action( 'admin_notices', 'bricks_child_admin_notice' );
 
@@ -376,17 +376,17 @@ add_action( 'admin_notices', 'bricks_child_admin_notice' );
  * @return void
  */
 function bricks_child_log( $data ) {
-    if ( ! WP_DEBUG ) {
-        return;
-    }
+	if ( ! WP_DEBUG ) {
+		return;
+	}
 
-    if ( is_array( $data ) || is_object( $data ) ) {
+	if ( is_array( $data ) || is_object( $data ) ) {
         // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
-        error_log( print_r( $data, true ) );
-    } else {
+		error_log( print_r( $data, true ) );
+	} else {
         // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
-        error_log( $data );
-    }
+		error_log( $data );
+	}
 }
 
 /**
@@ -396,20 +396,20 @@ function bricks_child_log( $data ) {
  * @return array Modified debug info.
  */
 function bricks_child_site_health_info( $info ) {
-    $info['bricks-child'] = array(
-        'label'  => __( 'Bricks Child Theme', 'bricks-child' ),
-        'fields' => array(
-            'version'        => array(
-                'label' => __( 'Theme Version', 'bricks-child' ),
-                'value' => BRICKS_CHILD_VERSION,
-            ),
-            'parent_version' => array(
-                'label' => __( 'Parent Theme Version', 'bricks-child' ),
-                'value' => wp_get_theme()->parent()->get( 'Version' ),
-            ),
-        ),
-    );
+	$info['bricks-child'] = array(
+		'label'  => __( 'Bricks Child Theme', 'bricks-child' ),
+		'fields' => array(
+			'version'        => array(
+				'label' => __( 'Theme Version', 'bricks-child' ),
+				'value' => BRICKS_CHILD_VERSION,
+			),
+			'parent_version' => array(
+				'label' => __( 'Parent Theme Version', 'bricks-child' ),
+				'value' => wp_get_theme()->parent()->get( 'Version' ),
+			),
+		),
+	);
 
-    return $info;
+	return $info;
 }
 add_filter( 'debug_information', 'bricks_child_site_health_info' );
