@@ -1,0 +1,63 @@
+@use "../breakpoints" as bp;
+@use "../colors" as colors;
+@use "../mixins/container-query" as *;
+
+.pagination {
+	margin-bottom: 0;
+	margin-top: 20px;
+
+	@include responsive(ft-main, bp.$bp-md) {
+		margin-top: 30px;
+	}
+
+	@include responsive(ft-main, bp.$bp-lg) {
+		margin-top: 40px;
+	}
+
+	ul {
+		margin: 0;
+		padding: 0;
+		display: flex;
+		justify-content: center;
+		gap: 10px;
+		list-style: none;
+		align-items: center;
+
+		li {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+
+			span,
+			a {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border-radius: 100%;
+				width: 30px;
+				height: 30px;
+				font-size: 14px;
+				line-height: 1.2;
+				font-weight: 500;
+			}
+
+			span {
+				background-color: colors.$terakotova;
+				color: colors.$bezova;
+			}
+
+			a {
+				background-color: colors.$bezova;
+				border: 1px solid colors.$terakotova;
+				color: colors.$terakotova;
+				transition: background-color, color 0.3s ease;
+				will-change: background-color, color;
+
+				&:hover {
+					background-color: colors.$terakotova;
+					color: colors.$bezova;
+				}
+			}
+		}
+	}
+}
