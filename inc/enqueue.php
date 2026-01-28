@@ -101,7 +101,7 @@ add_action( 'wp_enqueue_scripts', 'bricks_child_enqueue_assets', 20 );
  * @return void
  */
 function bricks_child_block_editor_assets() {
-	$editor_asset_file = BRICKS_CHILD_DIR . '/assets/dist/main.asset.php';
+	$editor_asset_file = BRICKS_CHILD_DIR . '/assets/dist/style.asset.php';
 
 	if ( ! file_exists( $editor_asset_file ) ) {
 		return;
@@ -112,7 +112,7 @@ function bricks_child_block_editor_assets() {
 	// Enqueue block editor styles.
 	wp_enqueue_style(
 		'bricks-child-editor',
-		BRICKS_CHILD_URI . '/assets/dist/main.css',
+		BRICKS_CHILD_URI . '/assets/dist/style.css',
 		array(),
 		$editor_asset['version']
 	);
@@ -126,7 +126,7 @@ add_action( 'enqueue_block_editor_assets', 'bricks_child_block_editor_assets' );
  */
 function bricks_child_preload_assets() {
 	// Preload main CSS.
-	echo '<link rel="preload" href="' . esc_url( BRICKS_CHILD_URI . '/assets/dist/main.css' ) . '" as="style">' . "\n";
+	echo '<link rel="preload" href="' . esc_url( BRICKS_CHILD_URI . '/assets/dist/style.css' ) . '" as="style">' . "\n";
 
 	// Preload main JS.
 	echo '<link rel="preload" href="' . esc_url( BRICKS_CHILD_URI . '/assets/dist/main.js' ) . '" as="script">' . "\n";
