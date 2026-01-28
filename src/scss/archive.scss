@@ -1,0 +1,112 @@
+@use "breakpoints" as bp;
+@use "fonts" as fonts;
+@use "colors" as colors;
+@use "./mixins/container-query" as *;
+@use "./mixins/ft-cqw" as *;
+@use "./mixins/responsive-max-width" as *;
+@use "./blog/taxonomies" as *;
+@use "./blog/post-card" as *;
+
+@media (max-width: 783px) {
+
+	.admin-bar {
+
+		.ft-archive {
+			padding-top: 140px;
+		}
+	}
+}
+
+.ft-archive {
+	background-color: var(--bezova);
+	position: relative;
+	overflow: hidden;
+	z-index: 10;
+	padding: 100px 0 40px;
+
+	@include responsive(ft-main, bp.$bp-md) {
+		padding: 100px 0 80px;
+	}
+
+	@include responsive(ft-main, bp.$bp-lg) {
+		padding: 140px 0 80px;
+	}
+
+	&-container {
+		position: relative;
+		z-index: 20;
+		max-width: bp.$bp-container;
+		margin: 0 auto;
+		padding: 0 16px;
+
+		@include responsive(ft-main, bp.$bp-md) {
+			padding: 0 20px;
+		}
+	}
+
+	.archive-header {
+		text-align: center;
+		margin-bottom: 16px;
+
+		@include responsive(ft-main, bp.$bp-md) {
+			margin-bottom: 30px;
+		}
+
+		@include responsive(ft-main, bp.$bp-lg) {
+			margin-bottom: 40px;
+		}
+	}
+
+	.archive-title {
+
+		@include ft-cqw(font-size, 6);
+		font-family: fonts.$MontserratAlternates;
+		line-height: 1.2;
+		font-weight: 500;
+		margin-bottom: 16px;
+		text-transform: capitalize;
+
+		@include responsive(ft-main, bp.$bp-md) {
+			font-size: 32px;
+			margin-bottom: 20px;
+		}
+
+		@include responsive(ft-main, bp.$bp-lg) {
+			font-size: 44px;
+		}
+	}
+
+	.archive-description {
+
+		@include responsive-max-width(75ch);
+		text-transform: uppercase;
+		font-size: 14px;
+		line-height: 1.7;
+		font-family: fonts.$Belleza;
+		margin: 0 auto;
+
+		@include responsive(ft-main, bp.$bp-md) {
+			font-size: 16px;
+			margin-bottom: 0;
+		}
+
+		@include responsive(ft-main, bp.$bp-lg) {
+			font-size: 18px;
+		}
+	}
+
+	.posts-list {
+		display: grid;
+		gap: 24px;
+		margin-top: 40px;
+		align-items: start;
+
+		@include responsive(ft-main, bp.$bp-sm) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include responsive(ft-main, bp.$bp-lg) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+}

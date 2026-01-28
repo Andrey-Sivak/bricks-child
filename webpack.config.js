@@ -14,6 +14,7 @@ module.exports = {
 	entry: {
 		main: path.resolve( process.cwd(), 'src/js', 'main.js' ),
 		style: path.resolve( process.cwd(), 'src/scss', 'main.scss' ),
+		archive: path.resolve( process.cwd(), 'src/scss', 'archive.scss' ),
 		admin: path.resolve( process.cwd(), 'src/js', 'admin.js' ),
 		'admin-style': path.resolve( process.cwd(), 'src/scss', 'admin.scss' ),
 		header: path.resolve( process.cwd(), 'src/js', 'header.js' ),

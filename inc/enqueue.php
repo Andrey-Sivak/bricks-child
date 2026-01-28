@@ -90,6 +90,18 @@ function bricks_child_enqueue_assets() {
 			),
 		)
 	);
+
+	if ( is_archive() || is_home() ) {
+		$archive_asset_file = BRICKS_CHILD_DIR . '/assets/dist/archive.asset.php';
+		$archive_asset      = require $archive_asset_file;
+
+		wp_enqueue_style(
+			'bricks-child-archive',
+			BRICKS_CHILD_URI . '/assets/dist/archive.css',
+			array(),
+			$archive_asset['version']
+		);
+	}
 }
 add_action( 'wp_enqueue_scripts', 'bricks_child_enqueue_assets', 20 );
 
