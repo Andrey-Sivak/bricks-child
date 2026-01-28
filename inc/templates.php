@@ -417,26 +417,7 @@ function bricks_child_display_related_posts( $post_id = 0, $taxonomy = '', $post
 			<?php
 			while ( $related_query->have_posts() ) {
 				$related_query->the_post();
-				?>
-				<article class="related-post-item">
-					<?php if ( has_post_thumbnail() ) : ?>
-						<a href="<?php the_permalink(); ?>" class="related-post-thumbnail">
-							<?php the_post_thumbnail( 'medium' ); ?>
-						</a>
-					<?php endif; ?>
-					<h3 class="related-post-title">
-						<a href="<?php the_permalink(); ?>">
-							<?php the_title(); ?>
-						</a>
-					</h3>
-					<div class="related-post-excerpt">
-						<?php echo esc_html( wp_trim_words( get_the_excerpt(), 20 ) ); ?>
-					</div>
-					<a href="<?php the_permalink(); ?>" class="related-post-link">
-						<?php echo esc_html_x( 'Read More', 'link text', 'bricks-child' ); ?>
-					</a>
-				</article>
-				<?php
+				get_template_part( 'template-parts/loop-post-card' );
 			}
 			wp_reset_postdata();
 			?>
