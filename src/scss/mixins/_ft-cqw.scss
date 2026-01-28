@@ -1,0 +1,7 @@
+@mixin ft-cqw ($property, $value) {
+	#{$property}: #{$value}cqw;
+
+	@supports not (container-type: inline-size) {
+		#{$property}: #{$value}vw;
+	}
+}
