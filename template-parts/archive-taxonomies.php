@@ -5,44 +5,49 @@
  * @package Bricks_Child
  */
 
-$categories = get_categories(
+defined( 'ABSPATH' ) || exit;
+
+$bricks_child_categories = get_categories(
 	array(
 		'orderby' => 'name',
 		'order'   => 'ASC',
 	)
 );
 
-$tags = get_tags(
+$bricks_child_tags = get_tags(
 	array(
 		'orderby' => 'name',
 		'order'   => 'ASC',
 	)
 );
 
-$tax = get_queried_object_id();
+$bricks_child_tax = get_queried_object_id();
 ?>
 
-<nav class="archive-taxonomies" aria-label="<?php esc_attr_e( 'Blog Taxonomies', 'bricks-child' ); ?>">
-	<?php if ( $categories && ! is_tag() ) : ?>
+<nav
+	class="archive-taxonomies"
+	aria-label="<?php echo esc_attr_x( 'Blog Taxonomies', 'navigation landmark', 'bricks-child' ); ?>"
+>
+	<?php if ( $bricks_child_categories && ! is_tag() ) : ?>
 		<section class="archive-categories">
 			<h2 class="ft-visually-hidden">
-				<?php esc_html_e( 'Categories', 'bricks-child' ); ?>
+				<?php echo esc_html_x( 'Categories', 'section heading', 'bricks-child' ); ?>
 			</h2>
 			<ul class="archive-categories-list">
-				<?php foreach ( $categories as $cat ) : ?>
-					<?php if ( $cat->term_id === $tax ) : ?>
+				<?php foreach ( $bricks_child_categories as $bricks_child_cat ) : ?>
+					<?php if ( $bricks_child_cat->term_id === $bricks_child_tax ) : ?>
 						<li class="archive-categories-item">
 							<span class="archive-categories-item-current">
-								<?php echo esc_html( $cat->name ); ?>
+								<?php echo esc_html( $bricks_child_cat->name ); ?>
 							</span>
 						</li>
 					<?php else : ?>
 						<li class="archive-categories-item">
 							<a
-                                    class="archive-categories-item-link"
-                                    href="<?php echo esc_url( get_category_link( $cat ) ); ?>"
-                            >
-								<?php echo esc_html( $cat->name ); ?>
+									class="archive-categories-item-link"
+									href="<?php echo esc_url( get_category_link( $bricks_child_cat ) ); ?>"
+							>
+								<?php echo esc_html( $bricks_child_cat->name ); ?>
 							</a>
 						</li>
 					<?php endif; ?>
@@ -51,23 +56,23 @@ $tax = get_queried_object_id();
 		</section>
 	<?php endif; ?>
 
-	<?php if ( $tags && ! is_category() ) : ?>
+	<?php if ( $bricks_child_tags && ! is_category() ) : ?>
 		<section class="archive-tags">
 			<h2 class="ft-visually-hidden">
-				<?php esc_html_e( 'Tags', 'bricks-child' ); ?>
+				<?php echo esc_html_x( 'Tags', 'section heading', 'bricks-child' ); ?>
 			</h2>
 			<ul class="archive-tags-list">
-				<?php foreach ( $tags as $tag ) : ?>
-					<?php if ( $tag->term_id === $tax ) : ?>
+				<?php foreach ( $bricks_child_tags as $bricks_child_tag ) : ?>
+					<?php if ( $bricks_child_tag->term_id === $bricks_child_tax ) : ?>
 						<li class="archive-tags-item">
 							<span>
-								#<?php echo esc_html( $tag->name ); ?>
+								#<?php echo esc_html( $bricks_child_tag->name ); ?>
 							</span>
 						</li>
 					<?php else : ?>
 						<li class="archive-tags-item">
-							<a href="<?php echo esc_url( get_tag_link( $tag ) ); ?>">
-								#<?php echo esc_html( $tag->name ); ?>
+							<a href="<?php echo esc_url( get_tag_link( $bricks_child_tag ) ); ?>">
+								#<?php echo esc_html( $bricks_child_tag->name ); ?>
 							</a>
 						</li>
 					<?php endif; ?>

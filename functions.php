@@ -187,7 +187,7 @@ function bricks_child_rest_example( $request ) {
 		array(
 			'success' => true,
 			'data'    => array(
-				'message' => __( 'Example endpoint', 'bricks-child' ),
+				'message' => _x( 'Example endpoint', 'REST API response message', 'bricks-child' ),
 			),
 		),
 		200

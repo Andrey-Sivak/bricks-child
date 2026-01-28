@@ -82,11 +82,11 @@ function bricks_child_enqueue_assets() {
 			'themeUrl'     => BRICKS_CHILD_URI,
 			'currentLang'  => function_exists( 'pll_current_language' ) ? pll_current_language() : substr( get_locale(), 0, 2 ),
 			'translations' => array(
-				'loading'   => __( 'Loading...', 'bricks-child' ),
-				'error'     => __( 'An error occurred', 'bricks-child' ),
-				'success'   => __( 'Success!', 'bricks-child' ),
-				'loadMore'  => __( 'Load More', 'bricks-child' ),
-				'noResults' => __( 'No results found', 'bricks-child' ),
+				'loading'   => _x( 'Loading...', 'loading status message', 'bricks-child' ),
+				'error'     => _x( 'An error occurred', 'error message', 'bricks-child' ),
+				'success'   => _x( 'Success!', 'success message', 'bricks-child' ),
+				'loadMore'  => _x( 'Load More', 'button text', 'bricks-child' ),
+				'noResults' => _x( 'No results found', 'empty state message', 'bricks-child' ),
 			),
 		)
 	);

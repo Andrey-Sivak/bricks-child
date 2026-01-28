@@ -282,7 +282,7 @@ function bricks_child_get_cpt_breadcrumbs( $post_type = '' ) {
 
 	// Home link.
 	$breadcrumbs[] = array(
-		'text' => __( 'Home', 'bricks-child' ),
+		'text' => _x( 'Home', 'breadcrumb', 'bricks-child' ),
 		'url'  => home_url( '/' ),
 	);
 
@@ -319,7 +319,10 @@ function bricks_child_display_breadcrumbs( $post_type = '' ) {
 		return;
 	}
 
-	echo '<nav class="breadcrumbs" aria-label="' . esc_attr__( 'Breadcrumb', 'bricks-child' ) . '">';
+	printf(
+		'<nav class="breadcrumbs" aria-label="%s">',
+		esc_attr_x( 'Breadcrumb', 'navigation landmark', 'bricks-child' )
+	);
 	echo '<ol class="breadcrumb-list">';
 
 	foreach ( $breadcrumbs as $index => $crumb ) {
@@ -408,7 +411,7 @@ function bricks_child_display_related_posts( $post_id = 0, $taxonomy = '', $post
 	?>
 	<section class="related-posts">
 		<h2 class="related-posts-title">
-			<?php esc_html_e( 'Related Posts', 'bricks-child' ); ?>
+			<?php echo esc_html_x( 'Related Posts', 'section heading', 'bricks-child' ); ?>
 		</h2>
 		<div class="related-posts-grid">
 			<?php
@@ -430,7 +433,7 @@ function bricks_child_display_related_posts( $post_id = 0, $taxonomy = '', $post
 						<?php echo esc_html( wp_trim_words( get_the_excerpt(), 20 ) ); ?>
 					</div>
 					<a href="<?php the_permalink(); ?>" class="related-post-link">
-						<?php esc_html_e( 'Read More', 'bricks-child' ); ?>
+						<?php echo esc_html_x( 'Read More', 'link text', 'bricks-child' ); ?>
 					</a>
 				</article>
 				<?php
