@@ -9,10 +9,10 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-01-26T18:18:54+00:00\n"
+"POT-Creation-Date: 2026-01-28T12:11:37+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
-"X-Domain: ft-blocks\n"
+"X-Domain: bricks-child\n"
 
 #. Theme Name of the theme
 #: style.css
@@ -37,4 +37,117 @@ msgstr ""
 #. Author URI of the theme
 #: style.css
 msgid "https://github.com/Andrey-Sivak"
+msgstr ""
+
+#: functions.php:190
+msgctxt "REST API response message"
+msgid "Example endpoint"
+msgstr ""
+
+#. translators: %s: Theme version
+#: functions.php:360
+#, php-format
+msgid "Bricks Child Theme v%s is active. Thank you for using our theme!"
+msgstr ""
+
+#: functions.php:398
+msgid "Bricks Child Theme"
+msgstr ""
+
+#: functions.php:401
+msgid "Theme Version"
+msgstr ""
+
+#: functions.php:405
+msgid "Parent Theme Version"
+msgstr ""
+
+#: inc/enqueue.php:85
+msgctxt "loading status message"
+msgid "Loading..."
+msgstr ""
+
+#: inc/enqueue.php:86
+msgctxt "error message"
+msgid "An error occurred"
+msgstr ""
+
+#: inc/enqueue.php:87
+msgctxt "success message"
+msgid "Success!"
+msgstr ""
+
+#: inc/enqueue.php:88
+msgctxt "button text"
+msgid "Load More"
+msgstr ""
+
+#: inc/enqueue.php:89
+msgctxt "empty state message"
+msgid "No results found"
+msgstr ""
+
+#: inc/templates.php:285
+msgctxt "breadcrumb"
+msgid "Home"
+msgstr ""
+
+#: inc/templates.php:324
+msgctxt "navigation landmark"
+msgid "Breadcrumb"
+msgstr ""
+
+#: inc/templates.php:414
+msgctxt "section heading"
+msgid "Related Posts"
+msgstr ""
+
+#: inc/templates.php:436
+msgctxt "link text"
+msgid "Read More"
+msgstr ""
+
+#: template-parts/archive-taxonomies.php:29
+msgctxt "navigation landmark"
+msgid "Blog Taxonomies"
+msgstr ""
+
+#: template-parts/archive-taxonomies.php:34
+msgctxt "section heading"
+msgid "Categories"
+msgstr ""
+
+#: template-parts/archive-taxonomies.php:62
+msgctxt "section heading"
+msgid "Tags"
+msgstr ""
+
+#: template-parts/content-archive.php:10
+msgctxt "page title"
+msgid "Blog"
+msgstr ""
+
+#: template-parts/content-archive.php:23
+msgctxt "blog archive description"
+msgid "Latest articles and insights."
+msgstr ""
+
+#: template-parts/content-archive.php:74
+msgctxt "empty state message"
+msgid "No posts found."
+msgstr ""
+
+#: template-parts/pagination.php:28
+msgctxt "navigation landmark"
+msgid "Posts Pagination"
+msgstr ""
+
+#: assets/dist/header.js:117
+#: assets/dist/header.js:81
+msgid "Show/hide mobile menu"
+msgstr ""
+
+#: assets/dist/header.js:118
+#: assets/dist/header.js:82
+msgid "Menu"
 msgstr ""
