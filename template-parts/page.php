@@ -1,3 +1,13 @@
+<?php
+/**
+ * Page Template
+ *
+ * @package Bricks_Child
+ */
+
+defined( 'ABSPATH' ) || exit;
+?>
+
 <article id="brx-content" <?php post_class( 'WordPress' ); ?>>
 	<?php
 	the_content();
