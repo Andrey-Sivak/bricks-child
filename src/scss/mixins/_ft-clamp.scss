@@ -1,0 +1,7 @@
+@mixin ft-clamp($property, $min, $preferred, $max) {
+	#{$property}: clamp($min, $preferred, $max);
+
+	@supports (clamp(0,0,0)) {
+		#{$property}: $preferred;
+	}
+}
