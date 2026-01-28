@@ -1,0 +1,7 @@
+@mixin responsive-max-width($width) {
+	max-width: $width;
+
+	@supports not (width: max(1ch, 1px)) {
+		max-width: $width * 1rem;
+	}
+}
