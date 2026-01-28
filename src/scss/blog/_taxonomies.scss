@@ -1,0 +1,108 @@
+@use "../breakpoints" as bp;
+@use "../colors" as colors;
+@use "../mixins/container-query" as *;
+
+.archive {
+
+	&-taxonomies {
+		display: grid;
+		gap: 20px;
+	}
+
+	&-categories {
+
+		&-list {
+			list-style: none;
+			display: flex;
+			column-gap: 8px;
+			row-gap: 8px;
+			flex-wrap: wrap;
+			align-items: center;
+			margin: 0;
+			padding: 0;
+			justify-content: center;
+
+			@include responsive(ft-main, bp.$bp-md) {
+				row-gap: 10px;
+				column-gap: 12px;
+			}
+		}
+
+		&-item {
+			list-style: none;
+
+			a,
+			span {
+				display: block;
+				line-height: 1.2;
+				white-space: nowrap;
+				border-radius: 10000px;
+				font-size: 14px;
+				padding: 4px 14px;
+				border: 1px solid colors.$terakotova;
+
+				@include responsive(ft-main, bp.$bp-md) {
+					font-size: 16px;
+					padding: 6px 20px;
+				}
+			}
+
+			a {
+				color: #fff;
+				transition: all 0.3s ease;
+				will-change: background-color, color;
+				border: 1px solid colors.$terakotova;
+				background-color: colors.$terakotova;
+
+				&:hover {
+					background-color: colors.$bezova;
+					color: colors.$terakotova;
+				}
+			}
+
+			span {
+				background-color: colors.$bezova;
+				color: colors.$terakotova;
+			}
+		}
+	}
+
+	&-tags {
+
+		&-list {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 10px;
+			margin: 0;
+			padding: 0;
+			align-items: center;
+			justify-content: center;
+		}
+
+		&-item {
+			list-style: none;
+
+			&-link,
+			&-current {
+				font-size: 14px;
+				line-height: 1.2;
+				display: block;
+			}
+
+			&-link {
+				color: #555;
+				text-decoration: none;
+
+				&:hover {
+					color: #000;
+					text-decoration: underline;
+				}
+			}
+
+			&-current {
+				color: #000;
+				text-decoration: underline;
+			}
+		}
+	}
+}
