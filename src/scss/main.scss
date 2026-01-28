@@ -19,3 +19,7 @@ body:not(.wp-admin) {
 	clip: rect(0 0 0 0);
 	opacity: 0;
 }
+
+#brx-content {
+	z-index: 10;
+}
