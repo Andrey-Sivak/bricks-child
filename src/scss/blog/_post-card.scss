@@ -1,0 +1,87 @@
+@use "../colors" as colors;
+@use "../breakpoints" as bp;
+@use "../fonts" as fonts;
+@use "../mixins/container-query" as *;
+
+$padding: clamp(20px, 0.994cqw + 16px, 30px);
+$base-class: ".post-card";
+
+#{$base-class} {
+	position: relative;
+	z-index: 10;
+	border-radius: 16px;
+	padding: $padding;
+	border: 1px solid colors.$terakotova;
+	transition: transform 0.3s ease;
+	display: grid;
+	gap: 10px;
+	max-width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+
+	&-thumbnail {
+		border-radius: 8px 8px 0 0;
+		margin: 0;
+		position: relative;
+		overflow: hidden;
+
+		img {
+			transition: transform 0.3s ease;
+		}
+	}
+
+	&-title {
+		margin: 0;
+		font-weight: 600;
+		font-family: fonts.$MontserratAlternates;
+		font-size: 20px;
+		line-height: 1.4;
+
+		@include responsive(ft-main, bp.$bp-md) {
+			font-size: 24px;
+		}
+	}
+
+	&:hover {
+
+		#{$base-class}-thumbnail {
+
+			img {
+				transform: scale(1.07);
+			}
+		}
+
+		#{$base-class}-title {
+			text-decoration: underline;
+		}
+	}
+
+	&-categories {
+		font-size: 14px;
+		line-height: 1;
+
+		a {
+			opacity: 0.85;
+			text-decoration: none;
+			transition: opacity 0.3s ease;
+			font-size: inherit;
+			line-height: inherit;
+
+			&:hover {
+				opacity: 1;
+				text-decoration: underline;
+			}
+		}
+	}
+
+	&-excerpt {
+		margin: 0;
+	}
+
+	&-meta {
+		font-size: 14px;
+		opacity: 0.8;
+		line-height: 1;
+		text-align: right;
+	}
+}
