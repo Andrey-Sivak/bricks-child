@@ -5,6 +5,7 @@
 
 @use "components/header";
 @use "components/footer";
+@use "components/pagination";
 
 body:not(.wp-admin) {
 	container-type: inline-size;
