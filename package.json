@@ -51,6 +51,7 @@
   },
   "devDependencies": {
     "@wordpress/scripts": "^31.3.0",
+    "fslightbox": "^3.7.4",
     "rimraf": "^6.1.2"
   }
 }

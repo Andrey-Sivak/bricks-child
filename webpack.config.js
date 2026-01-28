@@ -15,9 +15,11 @@ module.exports = {
 		main: path.resolve( process.cwd(), 'src/js', 'main.js' ),
 		style: path.resolve( process.cwd(), 'src/scss', 'main.scss' ),
 		archive: path.resolve( process.cwd(), 'src/scss', 'archive.scss' ),
+		single: path.resolve( process.cwd(), 'src/scss', 'single.scss' ),
 		admin: path.resolve( process.cwd(), 'src/js', 'admin.js' ),
 		'admin-style': path.resolve( process.cwd(), 'src/scss', 'admin.scss' ),
 		header: path.resolve( process.cwd(), 'src/js', 'header.js' ),
+		'single-script': path.resolve( process.cwd(), 'src/js', 'single.js' ),
 	},
 
 	// Output configuration

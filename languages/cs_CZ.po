@@ -62,27 +62,27 @@ msgstr "Verze motivu"
 msgid "Parent Theme Version"
 msgstr "Verze nadřazeného motivu"
 
-#: inc/enqueue.php:85
+#: inc/enqueue.php:91
 msgctxt "loading status message"
 msgid "Loading..."
 msgstr "Načítání..."
 
-#: inc/enqueue.php:86
+#: inc/enqueue.php:92
 msgctxt "error message"
 msgid "An error occurred"
 msgstr "Došlo k chybě"
 
-#: inc/enqueue.php:87
+#: inc/enqueue.php:93
 msgctxt "success message"
 msgid "Success!"
 msgstr "Úspěch!"
 
-#: inc/enqueue.php:88
+#: inc/enqueue.php:94
 msgctxt "button text"
 msgid "Load More"
 msgstr "Načíst další"
 
-#: inc/enqueue.php:89
+#: inc/enqueue.php:95
 msgctxt "empty state message"
 msgid "No results found"
 msgstr "Nebyly nalezeny žádné výsledky"
@@ -101,11 +101,6 @@ msgstr "Drobečková navigace"
 msgctxt "section heading"
 msgid "Related Posts"
 msgstr "Související příspěvky"
-
-#: inc/templates.php:436
-msgctxt "link text"
-msgid "Read More"
-msgstr "Číst více"
 
 #: template-parts/archive-taxonomies.php:29
 msgctxt "navigation landmark"
@@ -142,12 +137,20 @@ msgctxt "navigation landmark"
 msgid "Posts Pagination"
 msgstr "Stránkování příspěvků"
 
-#: assets/dist/header.js:117
-#: assets/dist/header.js:81
+#: assets/dist/header.js:1
 msgid "Show/hide mobile menu"
 msgstr "Zobrazit/skrýt mobilní menu"
 
-#: assets/dist/header.js:118
-#: assets/dist/header.js:82
+#: assets/dist/header.js:1
 msgid "Menu"
 msgstr "Menu"
+
+#: template-parts/post.php:42
+msgctxt "post meta label"
+msgid "Categories: "
+msgstr "Kategorie: "
+
+#: template-parts/post.php:50
+msgctxt "post meta label"
+msgid "Tags: "
+msgstr "Štítky: "

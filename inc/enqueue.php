@@ -108,6 +108,26 @@ function bricks_child_enqueue_assets() {
 			$archive_asset['version']
 		);
 	}
+
+	if ( is_singular() ) {
+		$single_asset_file = BRICKS_CHILD_DIR . '/assets/dist/single.asset.php';
+		$single_asset      = require $single_asset_file;
+
+		wp_enqueue_style(
+			'bricks-child-single',
+			BRICKS_CHILD_URI . '/assets/dist/single.css',
+			array(),
+			$single_asset['version']
+		);
+
+		wp_enqueue_script(
+			'bricks-child-single-script',
+			BRICKS_CHILD_URI . '/assets/dist/single-script.js',
+			array(),
+			$single_asset['version'],
+			true
+		);
+	}
 }
 add_action( 'wp_enqueue_scripts', 'bricks_child_enqueue_assets', 20 );
 

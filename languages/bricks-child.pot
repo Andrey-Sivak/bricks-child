@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-01-28T12:11:37+00:00\n"
+"POT-Creation-Date: 2026-01-28T20:51:41+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: bricks-child\n"
@@ -62,27 +62,27 @@ msgstr ""
 msgid "Parent Theme Version"
 msgstr ""
 
-#: inc/enqueue.php:85
+#: inc/enqueue.php:91
 msgctxt "loading status message"
 msgid "Loading..."
 msgstr ""
 
-#: inc/enqueue.php:86
+#: inc/enqueue.php:92
 msgctxt "error message"
 msgid "An error occurred"
 msgstr ""
 
-#: inc/enqueue.php:87
+#: inc/enqueue.php:93
 msgctxt "success message"
 msgid "Success!"
 msgstr ""
 
-#: inc/enqueue.php:88
+#: inc/enqueue.php:94
 msgctxt "button text"
 msgid "Load More"
 msgstr ""
 
-#: inc/enqueue.php:89
+#: inc/enqueue.php:95
 msgctxt "empty state message"
 msgid "No results found"
 msgstr ""
@@ -100,11 +100,6 @@ msgstr ""
 #: inc/templates.php:414
 msgctxt "section heading"
 msgid "Related Posts"
-msgstr ""
-
-#: inc/templates.php:436
-msgctxt "link text"
-msgid "Read More"
 msgstr ""
 
 #: template-parts/archive-taxonomies.php:29
@@ -142,12 +137,20 @@ msgctxt "navigation landmark"
 msgid "Posts Pagination"
 msgstr ""
 
-#: assets/dist/header.js:117
-#: assets/dist/header.js:81
+#: template-parts/post.php:42
+msgctxt "post meta label"
+msgid "Categories: "
+msgstr ""
+
+#: template-parts/post.php:50
+msgctxt "post meta label"
+msgid "Tags: "
+msgstr ""
+
+#: assets/dist/header.js:1
 msgid "Show/hide mobile menu"
 msgstr ""
 
-#: assets/dist/header.js:118
-#: assets/dist/header.js:82
+#: assets/dist/header.js:1
 msgid "Menu"
 msgstr ""
