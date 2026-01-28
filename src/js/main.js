@@ -1,5 +1,5 @@
 'use strict';
 
-(function () {
-    console.log('main.js')
-})()
+( function () {
+	console.log( 'main.js' );
+} )();
