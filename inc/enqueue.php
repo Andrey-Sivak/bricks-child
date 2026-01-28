@@ -70,6 +70,12 @@ function bricks_child_enqueue_assets() {
 		true
 	);
 
+	wp_set_script_translations(
+		'bricks-child-header',
+		'bricks-child',
+		BRICKS_CHILD_DIR . '/languages'
+	);
+
 	// Localize script with data from PHP.
 	wp_localize_script(
 		'bricks-child',
