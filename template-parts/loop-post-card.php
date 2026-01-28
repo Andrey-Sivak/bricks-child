@@ -5,6 +5,7 @@
  * @package Bricks_Child
  */
 
+defined( 'ABSPATH' ) || exit;
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'post-card' ); ?>>
 	<a href="<?php the_permalink(); ?>" class="post-card-link">

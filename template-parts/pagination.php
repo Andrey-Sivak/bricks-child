@@ -5,6 +5,8 @@
  * @package Bricks_Child
  */
 
+defined( 'ABSPATH' ) || exit;
+
 global $wp_query;
 
 $big   = 999999999; // need an unlikely integer

@@ -5,9 +5,7 @@
  * @package Bricks_Child
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Load custom template for custom post types

@@ -5,9 +5,7 @@
  * @package Bricks_Child
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Enqueue parent and child theme styles and scripts
