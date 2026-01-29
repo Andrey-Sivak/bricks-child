@@ -39,26 +39,26 @@ msgstr "Andrii Sivak"
 msgid "https://github.com/Andrey-Sivak"
 msgstr "https://github.com/Andrey-Sivak"
 
-#: functions.php:190
+#: functions.php:191
 msgctxt "REST API response message"
 msgid "Example endpoint"
 msgstr "Ukázkový endpoint"
 
 #. translators: %s: Theme version
-#: functions.php:360
+#: functions.php:361
 #, php-format
 msgid "Bricks Child Theme v%s is active. Thank you for using our theme!"
 msgstr "Motiv Bricks Child v%s je aktivní. Děkujeme, že používáte náš motiv!"
 
-#: functions.php:398
+#: functions.php:399
 msgid "Bricks Child Theme"
 msgstr "Motiv Bricks Child"
 
-#: functions.php:401
+#: functions.php:402
 msgid "Theme Version"
 msgstr "Verze motivu"
 
-#: functions.php:405
+#: functions.php:406
 msgid "Parent Theme Version"
 msgstr "Verze nadřazeného motivu"
 
@@ -102,17 +102,12 @@ msgctxt "section heading"
 msgid "Related Posts"
 msgstr "Související příspěvky"
 
-#: template-parts/archive-taxonomies.php:29
-msgctxt "navigation landmark"
-msgid "Blog Taxonomies"
-msgstr "Taxonomie blogu"
-
-#: template-parts/archive-taxonomies.php:34
+#: inc/helpers.php:43
 msgctxt "section heading"
 msgid "Categories"
 msgstr "Kategorie"
 
-#: template-parts/archive-taxonomies.php:62
+#: inc/helpers.php:48
 msgctxt "section heading"
 msgid "Tags"
 msgstr "Štítky"
@@ -137,11 +132,13 @@ msgctxt "navigation landmark"
 msgid "Posts Pagination"
 msgstr "Stránkování příspěvků"
 
-#: assets/dist/header.js:1
+#: assets/dist/header.js:117
+#: assets/dist/header.js:81
 msgid "Show/hide mobile menu"
 msgstr "Zobrazit/skrýt mobilní menu"
 
-#: assets/dist/header.js:1
+#: assets/dist/header.js:118
+#: assets/dist/header.js:82
 msgid "Menu"
 msgstr "Menu"
 
@@ -154,3 +151,57 @@ msgstr "Kategorie: "
 msgctxt "post meta label"
 msgid "Tags: "
 msgstr "Štítky: "
+
+#: inc/helpers.php:55
+msgctxt "section heading"
+msgid "Portfolio Categories"
+msgstr "Kategorie portfolia"
+
+#: inc/helpers.php:60
+msgctxt "section heading"
+msgid "Portfolio Tags"
+msgstr "Štítky portfolia"
+
+#: inc/helpers.php:67
+msgctxt "section heading"
+msgid "Service Categories"
+msgstr "Kategorie služeb"
+
+#: inc/helpers.php:72
+msgctxt "section heading"
+msgid "Service Tags"
+msgstr "Štítky služeb"
+
+#: template-parts/archive-taxonomies.php:25
+msgctxt "navigation landmark"
+msgid "Archive Taxonomies"
+msgstr "Taxonomie archivu"
+
+#: template-parts/content-archive-ft_portfolio.php:11
+msgctxt "portfolio page title"
+msgid "Portfolio"
+msgstr "Portfolio"
+
+#: template-parts/content-archive-ft_portfolio.php:12
+msgctxt "portfolio page description"
+msgid "A collection of cherished memories and meaningful moments"
+msgstr "Kolekce vzácných vzpomínek a významných okamžiků"
+
+#. translators: %s: category name
+#: template-parts/content-archive-ft_portfolio.php:25
+#, php-format
+msgctxt "default category description"
+msgid "Selected works from %s"
+msgstr "Vybraná práce z kategorie %s"
+
+#. translators: %s: tag name
+#: template-parts/content-archive-ft_portfolio.php:31
+#, php-format
+msgctxt "default tag description"
+msgid "Selected works from %s"
+msgstr "Vybraná práce se štítkem %s"
+
+#: template-parts/content-archive-ft_portfolio.php:87
+msgctxt "empty state message"
+msgid "No items found."
+msgstr "Nenalezeny žádné položky."

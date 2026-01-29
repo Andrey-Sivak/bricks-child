@@ -29,6 +29,7 @@ if ( file_exists( BRICKS_CHILD_DIR . '/vendor/autoload.php' ) ) {
 require_once BRICKS_CHILD_DIR . '/inc/enqueue.php';
 require_once BRICKS_CHILD_DIR . '/inc/i18n.php';
 require_once BRICKS_CHILD_DIR . '/inc/templates.php';
+require_once BRICKS_CHILD_DIR . '/inc/helpers.php';
 
 /**
  * Theme setup
