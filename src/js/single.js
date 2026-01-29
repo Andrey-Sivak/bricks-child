@@ -27,8 +27,13 @@ import 'fslightbox';
 				return;
 			}
 
-			const src = img.getAttribute( 'src' );
-			if ( ! src ) {
+			const src =
+				img.getAttribute( 'data-src' ) ||
+				img.getAttribute( 'data-lazy-src' ) ||
+				img.getAttribute( 'data-original' ) ||
+				img.getAttribute( 'src' );
+
+			if ( ! src || src.startsWith( 'data:image/svg' ) ) {
 				return;
 			}
 
