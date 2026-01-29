@@ -70,7 +70,7 @@ $bricks_child_blog_desc = $bricks_child_blog_desc
 				endwhile;
 			else :
 				printf(
-					'<p>%s</p>',
+					'<p class="ft-archive-not-found">%s</p>',
 					esc_html_x( 'No posts found.', 'empty state message', 'bricks-child' )
 				);
 			endif;

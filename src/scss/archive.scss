@@ -109,4 +109,14 @@
 			grid-template-columns: repeat(3, 1fr);
 		}
 	}
+
+	&-not-found {
+		text-align: center;
+		font-size: 16px;
+		grid-column: 1/-1;
+
+		@include responsive(ft-main, bp.$bp-md) {
+			font-size: 18px;
+		}
+	}
 }
