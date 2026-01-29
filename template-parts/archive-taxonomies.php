@@ -18,8 +18,8 @@ if ( empty( $bricks_child_taxonomies ) ) {
 
 $bricks_child_categories     = isset( $bricks_child_taxonomies['category'] ) ? bricks_child_get_archive_terms( $bricks_child_taxonomies['category']['taxonomy'] ) : array();
 $bricks_child_tags           = isset( $bricks_child_taxonomies['tag'] ) ? bricks_child_get_archive_terms( $bricks_child_taxonomies['tag']['taxonomy'] ) : array();
-$bricks_child_is_tag_archive = is_tag() || ( is_tax() && $bricks_child_current_tax === ( $bricks_child_taxonomies['tag']['taxonomy'] ?? '' ) );
-$bricks_child_is_cat_archive = is_category() || ( is_tax() && $bricks_child_current_tax === ( $bricks_child_taxonomies['category']['taxonomy'] ?? '' ) );
+$bricks_child_is_tag_archive = is_tag() || ( is_tax() && ( $bricks_child_taxonomies['tag']['taxonomy'] ?? '' ) === $bricks_child_current_tax );
+$bricks_child_is_cat_archive = is_category() || ( is_tax() && ( $bricks_child_taxonomies['category']['taxonomy'] ?? '' ) === $bricks_child_current_tax );
 ?>
 
 <nav class="archive-taxonomies" aria-label="<?php echo esc_attr_x( 'Archive Taxonomies', 'navigation landmark', 'bricks-child' ); ?>">
