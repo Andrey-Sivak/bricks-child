@@ -142,11 +142,13 @@ msgstr "Zobrazit/skrýt mobilní menu"
 msgid "Menu"
 msgstr "Menu"
 
+#: single-ft_portfolio.php:53
 #: template-parts/post.php:42
 msgctxt "post meta label"
 msgid "Categories: "
 msgstr "Kategorie: "
 
+#: single-ft_portfolio.php:74
 #: template-parts/post.php:50
 msgctxt "post meta label"
 msgid "Tags: "

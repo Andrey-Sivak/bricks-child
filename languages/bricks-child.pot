@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-01-29T13:30:50+00:00\n"
+"POT-Creation-Date: 2026-01-29T17:21:56+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: bricks-child\n"
@@ -132,6 +132,18 @@ msgctxt "section heading"
 msgid "Related Posts"
 msgstr ""
 
+#: single-ft_portfolio.php:53
+#: template-parts/post.php:42
+msgctxt "post meta label"
+msgid "Categories: "
+msgstr ""
+
+#: single-ft_portfolio.php:74
+#: template-parts/post.php:50
+msgctxt "post meta label"
+msgid "Tags: "
+msgstr ""
+
 #: template-parts/archive-taxonomies.php:25
 msgctxt "navigation landmark"
 msgid "Archive Taxonomies"
@@ -184,16 +196,6 @@ msgstr ""
 #: template-parts/pagination.php:28
 msgctxt "navigation landmark"
 msgid "Posts Pagination"
-msgstr ""
-
-#: template-parts/post.php:42
-msgctxt "post meta label"
-msgid "Categories: "
-msgstr ""
-
-#: template-parts/post.php:50
-msgctxt "post meta label"
-msgid "Tags: "
 msgstr ""
 
 #: assets/dist/header.js:117
