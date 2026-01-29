@@ -26,9 +26,15 @@ $base-class: ".post-card";
 		margin: 0;
 		position: relative;
 		overflow: hidden;
+		aspect-ratio: auto 1024 / 576;
 
 		img {
 			transition: transform 0.3s ease;
+			width: 100%;
+			display: block;
+			height: 100%;
+			object-fit: cover;
+			object-position: center;
 		}
 	}
 
