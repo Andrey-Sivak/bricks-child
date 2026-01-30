@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-01-29T17:21:56+00:00\n"
+"POT-Creation-Date: 2026-01-30T19:07:44+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: bricks-child\n"
@@ -127,7 +127,7 @@ msgctxt "navigation landmark"
 msgid "Breadcrumb"
 msgstr ""
 
-#: inc/templates.php:414
+#: inc/templates.php:415
 msgctxt "section heading"
 msgid "Related Posts"
 msgstr ""
@@ -178,6 +178,21 @@ msgctxt "empty state message"
 msgid "No items found."
 msgstr ""
 
+#: template-parts/content-archive-ft_service.php:11
+msgctxt "services page title"
+msgid "Services"
+msgstr ""
+
+#: template-parts/content-archive-ft_service.php:12
+msgctxt "services page description"
+msgid "Professional photography services focused on authentic moments, natural emotions, and timeless visual storytelling."
+msgstr ""
+
+#: template-parts/content-archive-ft_service.php:68
+msgctxt "empty state message"
+msgid "No services found."
+msgstr ""
+
 #: template-parts/content-archive.php:10
 msgctxt "page title"
 msgid "Blog"
@@ -198,12 +213,10 @@ msgctxt "navigation landmark"
 msgid "Posts Pagination"
 msgstr ""
 
-#: assets/dist/header.js:117
-#: assets/dist/header.js:81
+#: assets/dist/header.js:1
 msgid "Show/hide mobile menu"
 msgstr ""
 
-#: assets/dist/header.js:118
-#: assets/dist/header.js:82
+#: assets/dist/header.js:1
 msgid "Menu"
 msgstr ""

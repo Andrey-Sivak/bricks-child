@@ -97,7 +97,7 @@ msgctxt "navigation landmark"
 msgid "Breadcrumb"
 msgstr "Drobečková navigace"
 
-#: inc/templates.php:414
+#: inc/templates.php:415
 msgctxt "section heading"
 msgid "Related Posts"
 msgstr "Související příspěvky"
@@ -132,13 +132,11 @@ msgctxt "navigation landmark"
 msgid "Posts Pagination"
 msgstr "Stránkování příspěvků"
 
-#: assets/dist/header.js:117
-#: assets/dist/header.js:81
+#: assets/dist/header.js:1
 msgid "Show/hide mobile menu"
 msgstr "Zobrazit/skrýt mobilní menu"
 
-#: assets/dist/header.js:118
-#: assets/dist/header.js:82
+#: assets/dist/header.js:1
 msgid "Menu"
 msgstr "Menu"
 
@@ -207,3 +205,18 @@ msgstr "Vybraná práce se štítkem %s"
 msgctxt "empty state message"
 msgid "No items found."
 msgstr "Nenalezeny žádné položky."
+
+#: template-parts/content-archive-ft_service.php:11
+msgctxt "services page title"
+msgid "Services"
+msgstr "Služby"
+
+#: template-parts/content-archive-ft_service.php:12
+msgctxt "services page description"
+msgid "Professional photography services focused on authentic moments, natural emotions, and timeless visual storytelling."
+msgstr "Fotografické služby zaměřené na autentické okamžiky, přirozené emoce a nadčasový vizuální příběh."
+
+#: template-parts/content-archive-ft_service.php:68
+msgctxt "empty state message"
+msgid "No services found."
+msgstr "Žádné služby nebyly nalezeny."

@@ -29,6 +29,7 @@ defined( 'ABSPATH' ) || exit;
 			<?php the_excerpt(); ?>
 		</div>
 
+		<?php if ( 'ft_service' !== get_post_type() ) : ?>
 		<div class="post-card-meta">
 			<time datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>">
 				<?php echo esc_html( get_the_date( 'j. F Y' ) ); ?>
@@ -39,5 +40,6 @@ defined( 'ABSPATH' ) || exit;
 				</span>
 			<?php endif; ?>
 		</div>
+		<?php endif; ?>
 	</a>
 </article>
