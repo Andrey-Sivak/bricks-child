@@ -378,15 +378,11 @@ function bricks_child_get_related_posts( $post_id = 0, $taxonomy = '', $posts_pe
 	if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
 		$term_ids = wp_list_pluck( $terms, 'term_id' );
 
-		var_dump( $term_ids );
-
 		$args['tax_query'][] = array(
 			'taxonomy' => $taxonomy,
 			'field'    => 'term_id',
 			'terms'    => $term_ids,
 		);
-
-		var_dump( $args );
 	}
 
 	$related_query = new WP_Query( $args );
