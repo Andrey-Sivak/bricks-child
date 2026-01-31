@@ -1,6 +1,7 @@
 'use strict';
 
 import { __ } from '@wordpress/i18n';
+import scrollToElement from './utils/scrollToElement';
 
 ( function () {
 	class Header {
@@ -18,6 +19,7 @@ import { __ } from '@wordpress/i18n';
 			this.boundScrollHandler = this.scrollHandler.bind( this );
 			this.boundDisplayMobMenuHandler = this.displayMobMenu.bind( this );
 			this.boundMenuClickHandler = this.handleMenuClick.bind( this );
+			this.boundAnchorClickHandler = this.handleAnchorClick.bind( this );
 			this.mobMenuButton = `<button class="mob-burger-btn"
 											type="button"
 											aria-expanded="false"
@@ -33,19 +35,115 @@ import { __ } from '@wordpress/i18n';
 		}
 
 		init() {
-			console.log( 'Header init' );
-
 			this.addMobileMenuButton();
 
 			this.boundScrollHandler();
 			window.addEventListener( 'scroll', this.boundScrollHandler );
 
 			if ( this.menus.length ) {
-				this.menus.forEach( ( menu ) =>
-					menu.addEventListener( 'click', this.boundMenuClickHandler )
-				);
+				this.menus.forEach( ( menu ) => {
+					menu.addEventListener(
+						'click',
+						this.boundMenuClickHandler
+					);
+				} );
+			}
+
+			this.initAnchorLinks();
+			this.handleScrollOnLoad();
+		}
+
+		/**
+		 * initialize anchor link handlers
+		 */
+		initAnchorLinks() {
+			const anchorLinks = document.querySelectorAll(
+				'.menu-item a[data-brx-anchor="true"], .menu-item a[href*="#"]'
+			);
+
+			anchorLinks.forEach( ( link ) => {
+				link.addEventListener( 'click', this.boundAnchorClickHandler );
+			} );
+		}
+
+		/**
+		 * handle anchor link clicks
+		 */
+		handleAnchorClick( e ) {
+			const link = e.currentTarget;
+			const href = link.getAttribute( 'href' );
+
+			if ( ! href || ! href.includes( '#' ) ) {
+				return;
+			}
+
+			const [ path, anchor ] = href.split( '#' );
+			const targetId = anchor;
+
+			if ( ! targetId ) {
+				return;
+			}
+
+			const isHomepage = this.isHomePage();
+			const isCurrentPage =
+				path === '' ||
+				path === '/' ||
+				window.location.pathname === path ||
+				( path.startsWith( '/' ) && window.location.pathname === path );
+
+			if ( isHomepage && isCurrentPage ) {
+				e.preventDefault();
+
+				const isMobileMenuOpen =
+					document.documentElement.classList.contains(
+						'mob-menu-active'
+					);
+
+				if ( isMobileMenuOpen ) {
+					this.displayMobMenu();
+
+					setTimeout( () => {
+						scrollToElement( targetId, 100, 500 );
+					}, 300 );
+				} else {
+					scrollToElement( targetId, 100, 500 );
+				}
+
+				return;
+			}
+
+			if ( ! isHomepage || ! isCurrentPage ) {
+				sessionStorage.setItem( 'scrollToTarget', targetId );
 			}
 		}
+
+		/**
+		 * handle scroll on page load (from cross-page navigation)
+		 */
+		handleScrollOnLoad() {
+			const targetId = sessionStorage.getItem( 'scrollToTarget' );
+
+			if ( targetId ) {
+				sessionStorage.removeItem( 'scrollToTarget' );
+
+				if ( document.readyState === 'loading' ) {
+					window.addEventListener( 'DOMContentLoaded', () => {
+						setTimeout( () => {
+							scrollToElement( targetId, 100, 500 );
+						}, 100 );
+					} );
+				} else {
+					setTimeout( () => {
+						scrollToElement( targetId, 100, 500 );
+					}, 100 );
+				}
+			}
+		}
+
+		/**
+		 * check if current page is homepage
+		 */
+		isHomePage = () => window.location.pathname === '/';
 
 		displayMobMenu() {
 			document.documentElement.classList.toggle( 'mob-menu-active' );
@@ -58,6 +156,7 @@ import { __ } from '@wordpress/i18n';
 
 		handleMenuClick( e ) {
 			const item = e.target.closest( 'li' );
+
 			const isDropdown = item.classList.contains( 'nav__dropdown' );
 
 			if ( ! isDropdown ) {
