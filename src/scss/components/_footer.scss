@@ -42,8 +42,10 @@ footer#brx-footer {
 		margin: 0 -16px;
 		width: calc(100% + 32px);
 		max-width: calc(100% + 32px);
+		padding-top: 80px;
 
 		@include responsive(ft-main, bp.$bp-md) {
+			padding-top: 100px;
 			max-width: 100%;
 			width: 100%;
 			margin: 0;
@@ -51,7 +53,16 @@ footer#brx-footer {
 		}
 	}
 
+	#brxe-uaakby {
+		font-size: 17vw;
+
+		@include responsive(ft-main, bp.$bp-md) {
+			font-size: clamp(16px, 10vw, 100px);
+		}
+	}
+
 	#brxe-kboaep {
+		justify-content: space-between;
 		order: 1;
 		padding-bottom: 0;
 
