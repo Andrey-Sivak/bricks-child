@@ -9,6 +9,7 @@
 .brxe-block {
 
 	&.header {
+		border-bottom: 1px solid colors.$terakotova-svetla;
 		background: colors.$bezova-svetla;
 		position: fixed;
 		left: 0;
