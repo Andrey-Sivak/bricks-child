@@ -130,11 +130,9 @@
 			}
 		}
 
-		.brxe-svg.logo {
+		a:has(.brxe-svg) {
 			display: block;
-			height: auto;
 			margin: 0 auto 0 16px;
-			width: 80px;
 			order: 1;
 
 			@include responsive(ft-main, bp.$bp-md) {
@@ -142,10 +140,19 @@
 			}
 
 			@include responsive(ft-main, bp.$bp-lg) {
-				width: auto;
 				margin: 0;
-				height: var(--logo-height);
 				order: 2;
+			}
+		}
+
+		.brxe-svg.logo {
+			display: block;
+			height: auto;
+			width: 80px;
+
+			@include responsive(ft-main, bp.$bp-lg) {
+				width: auto;
+				height: var(--logo-height);
 			}
 		}
 
